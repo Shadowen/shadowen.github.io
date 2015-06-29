@@ -1,4 +1,4 @@
-/* Carousel */
+/* Front page carousel */
 .carousel .item {
     width: 100%;
     height: 100%;
@@ -19,13 +19,7 @@
     color: #000;
 }
 
-.social-icon {
-    display: block;
-    height: 32px;
-    width: 32px;
-    margin: auto;
-}
-
+/* Custom jumbotrons for article headers */
 .jumbotron .repo-link {
     float: right;
 }
@@ -51,6 +45,7 @@
     margin-bottom: 0px;
 }
 
+/* Gallery thumbnails*/
 .thumbnail .caption {
     font-size: 24px;
     color: inherit;
@@ -61,14 +56,19 @@
     color: rgb(0, 0, 0);
 }
 
+/* Gallery title */
 .page-title {
     padding: 50px;
     text-align: center;
     font-size: 56px;
 }
-
-.java {
+/* Create custom label colours */
+.label-java {
     background-color: #0082ff;
 }
 
+.label-vcs{
+    background-color: #808080;
+}
+/* Pad the body so the navbar has space. */
 body { padding-top: 50px; }

@@ -4,22 +4,36 @@
 <head>
     <meta charset="utf-8" />
     <title>Website | Wesley Heung</title>
-    <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Load JavaScript and CSS components -->
+    <!-- Load JQuery -->
+    <!-- Google CDN -->
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
+    <!-- Local -->
+    <script>
+    if (typeof $ == 'undefined') {
+        document.write("<script src='/js/jquery-1.11.3.min.js'></script\>");
+    }
+    </script>
     <!-- Bootstrap -->
-    <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-    <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <!-- Google Code Prettify -->
-    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=desert"></script>
-    <!-- Custom css -->
+    <script>
+    $(function() {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+    </script>
+    <!-- Skrollr -->
+    <script src="/js/skrollr.min.js"></script>
+    <script>
+    $(function() {
+        skrollr.init();
+    })
+    </script>
+    <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="/styles/styles.css">
-    <link rel="stylesheet" type="text/css" href="/styles/about.css">
-    <!-- Load header -->
-    <script src="/header.js"></script>
+    <!-- Header -->
+    <script src="/js/header.js"></script>
 </head>
 
 <body>
@@ -38,6 +52,8 @@
         <div class="col-md-offset-1 col-md-10 article-content">
             <h1>Design Goals</h1>
             <h2>Engaging</h2>
+            <p>Using beautiful Bootstrap styles and Parallax animations from Skrollr.</p>
+            <p>User interface components are familiar Bootstrap fonts, colours, and designs, but all background pictures are unique to this website (No clip art!).</p>
             <h2>Reactive</h2>
             <p>A beautiful website is useless if no one can see it! With so many different devices accessing the internet, it is important to ensure that the website is usable by everyone. Using Twitter Bootstrap's built-in styles and careful CSS formatting, the website is designed to be easy to navigate on any device, regardless of screen size and input method.</p>
             <p>For example, to facilitate touch users, there are no dropdown menus or tooltips that only appear when the cursor is hovering over them. I promise. After all, it's not easy to hover with a touchscreen!</p>

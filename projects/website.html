@@ -20,6 +20,7 @@
     </head>
     <body>
         <header active="Projects"><!-- Header content loaded by JQuery --></header>
+        <div>
         <div class="jumbotron" style="background-image: url(/res/DSC_0783.jpg)">
             <div class="caption">
                 <h1>com.heungs.wesley<small> A handwritten portfolio website</small></h1>
@@ -28,7 +29,9 @@
                         <span class="label label-success">Bootstrap</span>
             </div>
         </div>
-            <div class="col-md-offset-1 col-md-10">
+        </div>
+        <div class="row">
+            <div class="col-md-offset-1 col-md-10 article-content">
                 <h1>Design Goals</h1>
                 <h2>Engaging</h2>
                 <h2>Reactive</h2>
@@ -38,6 +41,37 @@
                 <h2>Maintainable</h2>
                 <p>Of course I would like to lower the workload on myself to keep this site up and running. The headers and conserved elements across multiple pages are seperate files loaded in by JQuery. This ensures that the menu bars and navigation features are identical from page to page and allows me to make a single change that affects all the pages.</p>
                 <p>The styling is rarely done manually; rather I rely on Cascading Style Sheets (CSS) to format the pages. All I have to do to create a page is to tag the correct elements with simple HTML tags. The style sheets also ensure that similar content is styled consistently across the website.</p>
+                <h1>Libraries</h1>
+                <table class="table table-hover">
+                <thead>
+                    <tr>
+                    <th>Name</th><th>Usage</th><th>Website</th>
+                        </tr>
+                </thead>
+                    <tbody>
+                <tr><td>JQuery</td><td>DOM Manipulation</td><td><a href="https://jquery.com/">https://jquery.com/</a></td></tr>
+                <tr><td>Twitter Bootstrap</td><td>Reactive CSS and visual components</td><td><a href="http://getbootstrap.com/">http://getbootstrap.com/</a></td></tr>
+                <tr><td>Google Code Prettify</td><td>Embedded source code</td><td><a href="https://github.com/google/code-prettify/">https://github.com/google/code-prettify/</a></td></tr>
+                    <tr><td>Skrollr</td><td>Parallax backgrounds</td><td><a href="http://prinzhorn.github.io/skrollr/">http://prinzhorn.github.io/skrollr/</a></td></tr>
+                        </tbody>
+                </table>
+                <h1>Tools</h1>
+                <table class="table table-hover">
+                <thead>
+                <tr>
+                <th>Name</th>
+                    <th>Usage</th>
+                    <th>Website</th>
+                </tr>
+                </thead>
+                    <tbody>
+                        <tr><td>Sublime Text 3</td><td>Code formatting with <a href="https://github.com/victorporof/Sublime-HTMLPrettify">HTMLPrettify</a> plugin</td><td><a href="http://www.sublimetext.com/3">http://www.sublimetext.com/3</a></td></tr>
+                        <tr><td>Microsoft WebMatrix 3</td><td>Local webserver hosting</td><td><a href="https://www.microsoft.com/web/webmatrix/">https://www.microsoft.com/web/webmatrix/</a></td></tr>
+                        <tr><td>GitHub</td><td>Version control and web hosting</td><td><a href="https://github.com/">https://github.com/</a></td></tr>
+                        <tr><td>heungs.com</td><td>Front end url</td><td><a href="http://heungs.com/">http://heungs.com/</a></td></tr>
+                    </tbody>
+                </table>
+            </div>
             </div>
     </body>
 </html>

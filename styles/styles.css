@@ -20,29 +20,30 @@
 }
 
 /* Custom jumbotrons for article headers */
-.jumbotron .repo-link {
+.row > .jumbotron .repo-link {
     float: right;
 }
 
-.jumbotron {
+.row > .jumbotron {
     margin-bottom: 0px;
+    border-radius: 0px;
     padding: 50px;
-    padding-bottom: 200px;
+    padding-bottom: 10%;
     background-color: rgb(0, 0, 0);
 }
 
-.jumbotron .caption {
+.row > .jumbotron > .caption {
     text-align: left;
     background-color: rgba(255, 255, 255, 0.7);
     padding: 20px;
     margin-left: 20%;
 }
 
-.jumbotron .caption h1 {
+.row > .jumbotron > .caption > h1 {
     margin-top: 10px;
 }
 
-.jumbotron .caption p {
+.row > .jumbotron > .caption p {
     margin-bottom: 0px;
 }
 
@@ -75,9 +76,7 @@
 body { padding-top: 50px; }
 
 /* Articles */
-.parallax-window{
-}
 .article-content{
-    background: trasnaprent;
+    margin-top: 25px;
     background-color: rgba(255, 255, 255, 0.7);
 }

@@ -1,5 +1,8 @@
-$(function () {
-    $("header").load("/header.html", function () {
-        $("header > nav > div :contains('" + $("header").attr("active") + "')").last().parent().attr("class", "active");
+/* On document load */
+$(function() {
+    /* Load the header HTML */
+    $("header").load("/header.html", function() {
+        /* Set the active item on the navbar to to the one specified */
+        $("#" + $("header").attr("active")).attr("class", "active");
     });
 });

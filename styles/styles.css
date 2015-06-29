@@ -25,6 +25,7 @@
 }
 
 .jumbotron {
+    margin-bottom: 0px;
     padding: 50px;
     padding-bottom: 200px;
     background-color: rgb(0, 0, 0);
@@ -72,3 +73,11 @@
 }
 /* Pad the body so the navbar has space. */
 body { padding-top: 50px; }
+
+/* Articles */
+.parallax-window{
+}
+.article-content{
+    background: trasnaprent;
+    background-color: rgba(255, 255, 255, 0.7);
+}

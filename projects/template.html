@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>TBS | Wesley Heung</title>
+    <!-- Load JavaScript and CSS components -->
+    <!-- Load JQuery -->
+    <!-- Google CDN -->
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
+    <!-- Local -->
+    <script>
+    if (typeof $ == 'undefined') {
+        document.write("<script src='/js/jquery-1.11.3.min.js'></script\>");
+    }
+    </script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script>
+    $(function() {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+    </script>
+    <!-- Google Code Prettify -->
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=desert"></script>
+    <!-- Skrollr -->
+    <script src="/js/skrollr.min.js"></script>
+    <script>
+    $(function() {
+        skrollr.init({smoothScrolling:false});
+    })
+    </script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="/styles/styles.css">
+    <!-- Header -->
+    <script src="/js/header.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <header active="projects">
+            <!-- Header content loaded by JQuery -->
+        </header>
+        <div class="row">
+            <div class="jumbotron" style="background-image: url(/res/DSC_0748.jpg)">
+                <div class="caption">
+                    <h1>Title<a href="#" class="btn btn-primary repo-link">Go to Github</a><br><small>Description</small></h1>
+                    <span class="label label-java">Java</span>
+                    <span class="label label-html">HTML</span>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="background-image: url(/res/DSC_0779.jpg);" data-start="background-position: 0% 0%;" data-bottom="background-position:0% 100%;">
+            <div class="col-xs-12 col-md-offset-1 col-md-10 article-content">
+                <p class="lead">Leading content</p>
+                <h2>Title</h2>
+                <p>Content</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

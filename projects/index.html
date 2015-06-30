@@ -1,153 +1,157 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <title>Projects | Wesley Heung</title>
-    <!-- Load JavaScript and CSS components -->
-    <!-- Load JQuery -->
-    <!-- Google CDN -->
-    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
-    <!-- Local -->
-    <script>
-    if (typeof $ == 'undefined') {
-        document.write("<script src='/js/jquery-1.11.3.min.js'></script\>");
-    }
-    </script>
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script>
-    $(function() {
-        $('[data-toggle="tooltip"]').tooltip();
-    });
-    </script>
-    <!-- Google Code Prettify -->
-    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=desert"></script>
-    <!-- Skrollr -->
-    <script src="/js/skrollr.min.js"></script>
-    <script>
-    $(function() {
-        skrollr.init({smoothScrolling:false});
-    })
-    </script>
-    <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="/styles/styles.css">
-    <!-- Header -->
-    <script src="/js/header.js"></script>
-</head>
+    <head>
+        <title>Projects | Wesley Heung</title>
+        <!-- Load JavaScript and CSS components -->
+        <!-- Load JQuery -->
+        <!-- Google CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- Local -->
+        <script>
+            if (typeof $ == 'undefined') {
+                document.write("<script src='/js/jquery-1.11.3.min.js'></script\>");
+            }
+        </script>
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script>
+            $(function() {
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+        </script>
+        <!-- Google Code Prettify -->
+        <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=desert"></script>
+        <!-- Skrollr -->
+        <script src="/js/skrollr.min.js"></script>
+        <script>
+            $(function() {
+                skrollr.init({smoothScrolling:false});
+            })
+        </script>
+        <!-- Custom CSS -->
+        <link rel="stylesheet" type="text/css" href="/styles/styles.css">
+        <!-- Header -->
+        <script src="/js/header.js"></script>
+    </head>
 
-<body>
-    <header active="projects">
-        <!-- Header content loaded by JQuery from header.html -->
-    </header>
-    <div class="container-fluid">
-    <div class="row" style="background-image: url(/res/DSC_0779.jpg);" data-start="background-position: 0% 0%;" data-bottom="background-position:0% 100%;">
-    <!-- Thumbnails -->
-    <h1 class="page-title">Projects</h1>
-    <div class="col-md-offset-1 col-md-10">
-        <div class="row">
-            <div class="col-xs-12 col-md-4">
-                <div class="thumbnail">
-                    <a href="/projects/website.html">
-                        <img src="/res/DSC_0779.jpg" alt="...">
-                        <div class="caption">wesley.heungs.com</div>
-                    </a>
-                    <span class="label label-success">HTML 5</span>
-                    <span class="label label-success">JQuery</span>
-                    <span class="label label-success">Bootstrap</span>
-                </div>
-            </div>
-            <div class="col-xs-12 col-md-4">
-                <div class="thumbnail">
-                    <a href="/projects/lightning-ai.html">
-                        <img src="/res/DSC_0765.jpg" alt="...">
-                        <div class="caption">Lightning AI</div>
-                    </a>
-                    <span class="label label-java">Java 8</span>
-                    <span class="label label-danger">C++</span>
-                    <span class="label label-warning">AI</span>
-                </div>
-            </div>
-            <div class="col-xs-12 col-md-4">
-                <div class="thumbnail">
-                    <a href="/projects/tbs.html">
-                        <img src="/res/tbs.png" alt="...">
-                        <div class="caption">TBS</div>
-                    </a>
-                    <span class="label label-java">Java 7</span>
+    <body>
+        <header active="projects">
+            <!-- Header content loaded by JQuery from header.html -->
+        </header>
+        <div class="container-fluid">
+            <div class="row gallery" style="background-image: url(/res/DSC_0779.jpg);" data-start="background-position: 0% 0%;" data-bottom="background-position:0% 100%;">
+                <!-- Thumbnails -->
+                <h1 class="page-title">Projects</h1>
+                <div class="col-md-offset-1 col-md-10">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-4">
+                            <div class="thumbnail">
+                                <a href="/projects/website.html">
+                                    <img src="/res/DSC_0779.jpg" alt="...">
+                                    <div class="caption">wesley.heungs.com</div>
+                                </a>
+                                <span class="label label-success">HTML 5</span>
+                                <span class="label label-success">JQuery</span>
+                                <span class="label label-success">Bootstrap</span>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-4">
+                            <div class="thumbnail">
+                                <a href="/projects/lightning-ai.html">
+                                    <img src="/res/DSC_0765.jpg" alt="...">
+                                    <div class="caption">Lightning AI</div>
+                                </a>
+                                <span class="label label-java">Java 8</span>
+                                <span class="label label-danger">C++</span>
+                                <span class="label label-warning">AI</span>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-4">
+                            <div class="thumbnail">
+                                <a href="/projects/tbs.html">
+                                    <img src="/res/tbs.png" alt="...">
+                                    <div class="caption">TBS</div>
+                                </a>
+                                <span class="label label-java">Java 7</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-3">
+                            <div class="thumbnail">
+                                <a href="/projects/nos.html">
+                                    <img src="/res/pd-front-cropped.png" alt="...">
+                                    <div class="caption">Phantom Dancer</div>
+                                </a>
+                                <span class="label label-robotics">Robotics</span>
+                                <span class="label label-prototype">Prototype</span>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-md-3">
+                            <div class="thumbnail">
+                                <a href="/projects/bridge.html">
+                                    <img src="/res/bridge.jpg" alt="Bridge">
+                                    <div class="caption">Trainakator</div>
+                                </a>
+                                <span class="label label-prototype">Prototype</span>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-md-3">
+                            <div class="thumbnail">
+                                <a href="/projects/finales-funkeln.html">
+                                    <img src="/res/finales-funkeln.jpg" alt="Colour organ">
+                                    <div class="caption">Finales Funkeln</div>
+                                </a>
+                                <span class="label label-prototype">Prototype</span>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-md-3">
+                            <div class="thumbnail">
+                                <a href="#">
+                                    <img src="/res/DSC_0787.jpg" alt="...">
+                                    <div class="caption">Placeholder</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-md-3">
+                            <div class="thumbnail">
+                                <a href="#">
+                                    <img src="/res/DSC_0795.jpg" alt="...">
+                                    <div class="caption">Placeholder</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-md-3">
+                            <div class="thumbnail">
+                                <a href="#">
+                                    <img src="/res/DSC_0787.jpg" alt="...">
+                                    <div class="caption">Placeholder</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-md-3">
+                            <div class="thumbnail">
+                                <a href="#">
+                                    <img src="/res/DSC_0795.jpg" alt="...">
+                                    <div class="caption">Placeholder</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-md-3">
+                            <div class="thumbnail">
+                                <a href="#">
+                                    <img src="/res/DSC_0787.jpg" alt="...">
+                                    <div class="caption">Placeholder</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-xs-6 col-md-3">
-                <div class="thumbnail">
-                    <a href="#">
-                        <img src="/res/DSC_0783.jpg" alt="...">
-                        <div class="caption">Placeholder</div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-xs-6 col-md-3">
-                <div class="thumbnail">
-                    <a href="#">
-                        <img src="/res/DSC_0795.jpg" alt="...">
-                        <div class="caption">Placeholder</div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-xs-6 col-md-3">
-                <div class="thumbnail">
-                    <a href="#">
-                        <img src="/res/DSC_0765.jpg" alt="...">
-                        <div class="caption">Placeholder</div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-xs-6 col-md-3">
-                <div class="thumbnail">
-                    <a href="#">
-                        <img src="/res/DSC_0787.jpg" alt="...">
-                        <div class="caption">Placeholder</div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-xs-6 col-md-3">
-                <div class="thumbnail">
-                    <a href="#">
-                        <img src="/res/DSC_0795.jpg" alt="...">
-                        <div class="caption">Placeholder</div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-xs-6 col-md-3">
-                <div class="thumbnail">
-                    <a href="#">
-                        <img src="/res/DSC_0787.jpg" alt="...">
-                        <div class="caption">Placeholder</div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-xs-6 col-md-3">
-                <div class="thumbnail">
-                    <a href="#">
-                        <img src="/res/DSC_0795.jpg" alt="...">
-                        <div class="caption">Placeholder</div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-xs-6 col-md-3">
-                <div class="thumbnail">
-                    <a href="#">
-                        <img src="/res/DSC_0787.jpg" alt="...">
-                        <div class="caption">Placeholder</div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-        </div>
-</div>
-</body>
+    </body>
 
 </html>

@@ -14,17 +14,19 @@
 }
 
 /* Custom jumbotrons for article headers */
-.row > .jumbotron .repo-link {
-    float: right;
-}
-
 .row > .jumbotron {
     margin-bottom: 0px;
     border-radius: 0px;
     padding: 50px;
     padding-bottom: 10%;
+    background-size: cover;
     background-color: rgb(0, 0, 0);
 }
+
+.row > .jumbotron .repo-link {
+    float: right;
+}
+
 
 .row > .jumbotron > .caption {
     text-align: left;
@@ -42,18 +44,18 @@
 }
 
 /* Gallery thumbnails*/
-.thumbnail .caption {
+.gallery .thumbnail .caption {
     font-size: 24px;
-    color: inherit;
+    color: #000;
     text-align: center;
 }
 
-.thumbnail a:hover {
+.gallery .thumbnail a:hover {
     color: rgb(0, 0, 0);
 }
 
 /* Gallery title */
-.page-title {
+.gallery > .page-title {
     padding: 50px;
     text-align: center;
     font-size: 56px;
@@ -63,14 +65,48 @@
     background-color: #0082ff;
 }
 
-.label-vcs{
+.label-html {
+    background-color: #0005ff;
+}
+
+.label-vcs {
     background-color: #808080;
 }
+
+.label-robotics {
+    background-color: #ff0000;
+}
+
+.label-prototype {
+    background-color: #00ff21;
+}
+
+.label-bootstrap{
+    background-color: #870274;
+}
+
+.label-jquery {
+    background-color: #0005ff;
+}
+
 /* Pad the body so the navbar has space. */
-body { padding-top: 50px; }
+body {
+    padding-top: 50px;
+}
 
 /* Articles */
-.article-content{
-    margin-top: 25px;
+.article-content {
+    margin-top: 2em;
+    margin-bottom: 5em;
     background-color: rgba(255, 255, 255, 0.7);
+}
+
+/* Framed pictures */
+.framed {
+    display: inline-block;
+    background-color: rgba(255,255,255,0.7);
+    border-radius: 3px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }

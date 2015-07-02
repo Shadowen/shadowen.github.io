@@ -77,7 +77,7 @@
 }
 /* Create custom label colours */
 .label-java {
-    background-color: #0082ff;
+    background-color: #f46303;
 }
 
 .label-html {
@@ -94,6 +94,10 @@
 
 .label-prototype {
     background-color: #00ff21;
+}
+
+.label-arduino{
+    background-color: #006d8b;
 }
 
 .label-bootstrap {

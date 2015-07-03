@@ -57,8 +57,10 @@
         <div class="row" style="background-image: url(/res/DSC_0779.jpg);" data-top="background-position: 0% 0%;" data-bottom="background-position:0% 100%;">
             <div class="col-md-offset-1 col-md-10 article-content">
                 <h1>Design Goals</h1>
+                <h2>Educational</h2>
+                <p>To build a website that would supercede the <a href="http://wesley229.wix.com/design-portfolio">previous</a> one, I decided that I would have to go beyond the limited power of a free website builder. Therefore, I explored options available in common HTML, CSS, and Javascript libraries. They are listed <a href="#libraries">below</a>. This website was also a good way to practice using several web development tools, covered in the <a href="#tools">tools</a> section.</p>
                 <h2>Engaging</h2>
-                <p>Using beautiful Bootstrap styles and Parallax animations from Skrollr.</p>
+                <p>This site uses beautiful Bootstrap styles and Parallax animations from Skrollr to engage the audience.
                 <p>User interface components are familiar Bootstrap fonts, colours, and designs, but all background pictures are unique to this website (No clip art!).</p>
                 <h2>Reactive</h2>
                 <p>A beautiful website is useless if no one can see it! With so many different devices accessing the internet, it is important to ensure that the website is usable by everyone. Using Twitter Bootstrap's built-in styles and careful CSS formatting, the website is designed to be easy to navigate on any device, regardless of screen size and input method.</p>
@@ -66,17 +68,20 @@
                 <p>To accomodate many different screen sizes, Bootstrap's reactive column layout is utilized. See the projects page render in many different viewports below!</p>
                 <h2>Maintainable</h2>
                 <p>In order to minimize the effort required to keep the site running, pages are designed to be easily added, edited, and removed. Headers and other elements conserved across multiple pages are stored as seperate files that are loaded into each page by JQuery's <code>load(...)</code> function, as below. This ensures that the menu bars and navigation features are identical from page to page and allows me to make a single change that affects all the pages.</p>
-                <pre class="prettyprint">
-/* On document load */
-$(function() {
+                <pre class="prettyprint">/* On document load */
+$(function () {
     /* Load the header HTML */
-    $("header").load("/header.html", function() {
-        /* Set the active item on the navbar to to the one specified */
-        $("#" + $("header").attr("active")).attr("class", "active");
+    $("header").load("/header.html", function () {
+        $("#" + $("header").attr("active")).attr("class", "active"); // Set the active item on the navbar to to the one specified
     });
-});</pre>
+    /* Fix anchors */
+    var shiftWindow = function () { scrollBy(0, -50); };
+    window.onhashchange = shiftWindow; // Internal page anchor
+    if (window.location.hash) shiftWindow(); // Reference from external link
+});
+</pre>
                 <p>The majority of styling is done with Cascading Style Sheets (CSS). This streamlines the creation of pages and ensures that similar content is styled consistently across the website.</p>
-                <h1>Libraries</h1>
+                <h1 id="libraries">Libraries</h1>
                 <table class="table table-hover">
                     <thead>
                     <tr>
@@ -108,7 +113,7 @@ $(function() {
                     </tr>
                 </tbody>
                 </table>
-                <h1>Tools</h1>
+                <h1 id="tools">Tools</h1>
                 <table class="table table-hover">
                     <thead>
                     <tr>
@@ -140,6 +145,10 @@ $(function() {
                     </tr>
                 </tbody>
                 </table>
+                <p>The project began as a simple HTML page manually created in a folder on my desktop. However, it began to grow beyond my capabilities to organize as the number of pages increased. To manage the HTML and CSS files, I began using <strong>Sublime Text 3</strong>. The syntax highlighting offered by the base program was useful, but the real power came with the HTMLPrettify plugin that could auto-format the long files.</p>
+                <p>Soon after, I realized that I would need a webserver of some sort to host the pages. This would allow me additional power over what was served in a few crucial places: default pages (<code>index.html</code>) and error pages (<code>404.html</code>) for this reason, I used Microsoft's <strong>WebMatrix 3</strong>.</p>
+                <p>Pretty soon, the site was large enough that I had to worry about breaking it with accidental changes. At this point, it was important to use a version control system (VCS). Of course, <strong>GitHub</strong> would be a logical choice, since much of my source code was contained in the cloud there. But GitHub also had an unexpected benefit of hosting static pages as well. Therefore, the website was also hosted at <a href="http://shadowen.github.io">shadowen.github.io</a> with the help of GitHub Pages.</p>
+                <p>Finally, the front end url was chosen to be a subdomain of my family domain. With a simple CNAME entry, the website was available at <a href="http://wesley.heungs.com">wesley.heungs.com</a>.</p>
             </div>
         </div>
     </body>

@@ -9,11 +9,6 @@
 }
 
 .carousel > .carousel-inner {
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
 }
 
 .carousel-caption {
@@ -31,6 +26,8 @@
 .carousel > .carousel-inner > .item > img {
     width: 100%;
     height: 100%;
+    max-width: 100%;
+    max-height: 100%;
     overflow: no-display;
 }
 

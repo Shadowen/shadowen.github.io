@@ -8,6 +8,7 @@ $(function () {
     /* Fix anchors */
     var shiftWindow = function () { scrollBy(0, -50); };
     window.onhashchange = shiftWindow;
-//    window.addEventListener("hashchange", shiftWindow);
+    // Alternative method of above
+    // window.addEventListener("hashchange", shiftWindow);
     if (window.location.hash) shiftWindow();
 });

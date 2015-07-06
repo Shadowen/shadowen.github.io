@@ -124,7 +124,7 @@
     background-color: #0005ff;
 }
 
-/* Pad the body so the navbar has space. */
+/* Fit the body to everything under the navbar */
 html, body{
     height: 100%;
 }

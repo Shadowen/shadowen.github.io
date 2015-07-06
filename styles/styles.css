@@ -125,8 +125,14 @@
 }
 
 /* Pad the body so the navbar has space. */
+html, body{
+    height: 100%;
+}
 body {
     padding-top: 50px;
+}
+.container-fluid{
+    min-height: 100%;
 }
 
 /* Articles */
@@ -143,7 +149,7 @@ body {
     background-color: rgba(255,255,255,0.8);
     border-radius: 3px;
     padding: 10px;
-    margin-left: auto;
+    margin-left: auto;bod
     margin-right: auto;
 }
 

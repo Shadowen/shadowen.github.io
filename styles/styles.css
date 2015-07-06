@@ -48,7 +48,7 @@
 
 .row > .jumbotron > .caption {
     text-align: left;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
     margin-left: 20%;
 }
@@ -63,7 +63,7 @@
 
 /* Gallery thumbnails*/
 .gallery .thumbnail {
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 .gallery .thumbnail img {
@@ -133,14 +133,14 @@ body {
 .article-content {
     margin-top: 2em;
     margin-bottom: 5em;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 1em;
 }
 
 /* Framed pictures */
 .framed {
     display: inline-block;
-    background-color: rgba(255,255,255,0.7);
+    background-color: rgba(255,255,255,0.8);
     border-radius: 3px;
     padding: 10px;
     margin-left: auto;
@@ -149,4 +149,10 @@ body {
 
 .framed > img {
     max-width: 100%;
+}
+
+/* Parallax */
+.parallax-bg {
+    background-size: cover, contain;
+    background-repeat: no-repeat, no-repeat;
 }

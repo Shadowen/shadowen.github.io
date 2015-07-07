@@ -1,7 +1,29 @@
 /* Front page */
-.click-through{
+.click-through {
     pointer-events: none;
 }
+
+/* Default */
+.front-page > .overlay {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: fit-content;
+    height: fit-content;
+    padding-left: 30%;
+    padding-top: 20%;
+    background-image: url(/res/Overlay.png);
+    background-size: 100% 100%;
+    z-index: 4;
+}
+/* Small+ devices (tablets, 768 px and up) */
+@media (min-width: 767px) {
+    .front-page > .overlay {
+        padding-right: 3em;
+        padding-bottom: 3em;
+    }
+}
+
 .front-page > .slide {
     position: fixed;
     bottom: auto;

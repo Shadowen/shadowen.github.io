@@ -144,6 +144,10 @@
     background-color: #0005ff;
 }
 
+.label-ai{
+    background-color: #00b49e;
+}
+
 /* Fit the body to everything under the navbar */
 html, body {
     height: 100%;

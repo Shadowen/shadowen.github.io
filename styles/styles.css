@@ -144,7 +144,7 @@
     background-color: #0005ff;
 }
 
-.label-ai{
+.label-ai {
     background-color: #00b49e;
 }
 
@@ -159,16 +159,23 @@ body {
 
 .container-fluid {
     min-height: 100%;
-    background-repeat: no-repeat;
+    background-color: #000;
     background-size: cover;
 }
 
 /* Articles */
 .article-content {
-    margin-top: 2em;
-    margin-bottom: 5em;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 1em;
+    text-align: justify;
+    background-size: cover;
+}
+/* Small+ devices (tablets, 768 px and up) */
+@media (min-width: 767px) {
+    .article-content {
+        margin-top: 2em;
+        margin-bottom: 5em;
+    }
 }
 
 /* Framed pictures */
@@ -178,7 +185,7 @@ body {
     border-radius: 5px;
     padding: 10px;
     margin-left: auto;
-    bod margin-right: auto;
+    margin-right: auto;
 }
 
 .framed > img {
@@ -187,6 +194,13 @@ body {
 
 /* Parallax */
 .parallax-bg {
-    background-size: 100%, auto;
+    background-size: auto 100%;
     background-repeat: no-repeat, no-repeat;
+}
+/* Tablets+ */
+@media (min-width: 767px) {
+    .parallax-bg {
+        background-size: 100% auto;
+        background-repeat: no-repeat, no-repeat;
+    }
 }

@@ -21,16 +21,29 @@
     }
 }
 
-.test {
+.overlay-darken {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.front-page {
     position: relative;
     height: 100%;
     width: 100%;
-    background: black url(/res/IMG-20150512-WA0004.jpg);
-    background-size: 150%;
+    background-size: 300%;
+    background-repeat: no-repeat;
     animation-name: panning;
     animation-duration: 60s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+}
+
+/* Tablets+ */
+@media (min-width: 767px) {
+    .front-page {
+        background-size: 150%;
+    }
 }
 
 .center-page {
@@ -85,7 +98,6 @@
 }
 
 .gallery .thumbnail img {
-    height: 200px;
     width: 100%;
 }
 

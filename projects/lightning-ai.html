@@ -28,9 +28,12 @@
         <!-- Skrollr -->
         <script src="/js/skrollr.min.js"></script>
         <script>
-            $(function() {
-                skrollr.init({smoothScrolling:false});
-            })
+             $(function () {
+                skrollr.init({
+                    smoothScrolling: false,
+                    forceHeight: false
+                });
+            });
         </script>
         <!-- Custom CSS -->
         <link rel="stylesheet" type="text/css" href="/styles/styles.css">
@@ -103,6 +106,10 @@
 
 
 
+
+
+
+
 // Auto train
 BuildManager.unitQueue.stream()
     .forEach(
@@ -116,6 +123,10 @@ BuildManager.unitQueue.stream()
                     <div class="row">
                         <div class="col-md-6">
                             <pre class="prettyprint lang-java">
+
+
+
+
 
 
 
@@ -135,6 +146,10 @@ BuildManager.unitQueue.stream()
                     <p>A powerful, yet simple to implement debug manager allows the programmer to quickly and easily see what the AI is thinking at any given time. The debugger is modular so different sets of information can be quickly displayed or hidden at a keystroke.</p>
                     <p>Writing a module for the debugger is as simple as knowing what you want to show. The main module resides in a static class called <code>DebugManager</code>. To display information through it, simply register a fire-and-forget <code>DebugModule</code>, as below.</p>
                     <pre class="prettyprint lang-java">
+
+
+
+
 
 
 

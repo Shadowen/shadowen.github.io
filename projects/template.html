@@ -28,9 +28,12 @@
         <!-- Skrollr -->
         <script src="/js/skrollr.min.js"></script>
         <script>
-            $(function() {
-                skrollr.init({smoothScrolling:false});
-            })
+              $(function () {
+                skrollr.init({
+                    smoothScrolling: false,
+                    forceHeight: false
+                });
+            });
         </script>
         <!-- Custom CSS -->
         <link rel="stylesheet" type="text/css" href="/styles/styles.css">

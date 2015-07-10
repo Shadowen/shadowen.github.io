@@ -62,6 +62,15 @@
     padding-right: 3em;
 }
 
+/* Footer */
+#page-footer {
+    width: 100%;
+    background-image: linear-gradient(to top,#3c3c3c 0,#222 100%);
+    padding-top: 1em;
+    padding-bottom: 1em;
+    color: #9d9d9d;
+}
+
 /* Custom jumbotrons for article headers */
 .row > .jumbotron {
     margin-bottom: 0px;
@@ -165,14 +174,18 @@ html, body {
     height: 100%;
 }
 
-body {
-    padding-top: 50px;
+.full-size {
+    min-height: 100%;
+    min-width: 100%;
+    background-color: #fff;
 }
 
-.container-fluid {
-    min-height: 100%;
-    background-color: #000;
-    background-size: cover;
+.full-size row {
+    padding: 0;
+}
+
+body {
+    padding-top: 50px;
 }
 
 /* Articles */

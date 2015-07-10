@@ -39,10 +39,27 @@
     animation-timing-function: linear;
 }
 
+.front-page h1 {
+    font-size: 500%;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.front-page h2 {
+    color: rgba(200, 200, 200, 0.6);
+}
+
 /* Tablets+ */
 @media (min-width: 767px) {
     .front-page {
         background-size: 150%;
+    }
+
+    .front-page h1 {
+        font-size: 700%;
+    }
+
+    .front-page h2 {
+        font-size: 400%;
     }
 }
 

@@ -35,6 +35,14 @@
                 });
             });
         </script>
+        <!-- Galleria -->
+        <script src="/js/galleria/galleria-1.4.2.min.js"></script>
+        <script>
+            $(function () {
+                Galleria.loadTheme('/js/galleria/themes/classic/galleria.classic.min.js');
+                Galleria.run('.galleria');
+            });
+        </script>
         <!-- Custom CSS -->
         <link rel="stylesheet" type="text/css" href="/styles/styles.css">
         <!-- Header -->
@@ -42,85 +50,24 @@
     </head>
 
     <body>
-        <div id="skrollr-body" class="container-fluid">
-            <header active="art">
-                <!-- Header content loaded by JQuery -->
-            </header>
-            <div class="row gallery">
-                <div class="col-md-offset-1 col-md-10">
-                    <h1 class="page-title">Photography</h1>
-                    <div class="col-md-2">
-                        <a href="/res/DSC_0748.jpg" class="thumbnail" title="A lakeside tree">
-                            <img src="/res/DSC_0748.jpg" alt="A lakeside tree">
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="/res/DSC_0757.jpg" class="thumbnail" title="A seagull in the distance">
-                            <img src="/res/DSC_0757.jpg" alt="A seagull in the distance">
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="/res/DSC_0765.jpg" class="thumbnail" title="A seagull in flight">
-                            <img src="/res/DSC_0765.jpg" alt="A seagull in flight">
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="/res/DSC_0773.jpg" class="thumbnail" title="A swan displaying its wingspan">
-                            <img src="/res/DSC_0773.jpg" alt="A swan displaying its wingspan">
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="/res/DSC_0794.jpg" class="thumbnail" title="A seagull taking off from water">
-                            <img src="/res/DSC_0794.jpg" alt="A seagull taking off from water">
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="/res/DSC_0795.jpg" class="thumbnail" title="A duck in water">
-                            <img src="/res/DSC_0795.jpg" alt="A duck in water">
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="/res/IMG-20150512-WA0001.jpg" class="thumbnail" title="Cherry blossoms">
-                            <img src="/res/IMG-20150512-WA0001.jpg" alt="Cherry blossoms">
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="/res/IMG-20150512-WA0002.jpg" class="thumbnail" title="A Canadian goose in a lake">
-                            <img src="/res/IMG-20150512-WA0002.jpg" alt="A Canadian goose in a lake">
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="/res/IMG-20150512-WA0003.jpg" class="thumbnail" title="A squirrel eating">
-                            <img src="/res/IMG-20150512-WA0003.jpg" alt="A squirrel eating">
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="/res/IMG-20150512-WA0004.jpg" class="thumbnail" title="Cherry flowers on a branch">
-                            <img src="/res/IMG-20150512-WA0004.jpg" alt="Cherry flowers on a branch">
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="/res/IMG-20150512-WA0005.jpg" class="thumbnail" title="Colourful trees">
-                            <img src="/res/IMG-20150512-WA0005.jpg" alt="Colourful trees">
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="/res/IMG-20150512-WA0006.jpg" class="thumbnail" title="A tree stump">
-                            <img src="/res/IMG-20150512-WA0006.jpg" alt="A tree stump">
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="/res/IMG-20150512-WA0007.jpg" class="thumbnail" title="Cherry blossoms">
-                            <img src="/res/IMG-20150512-WA0007.jpg" alt="Cherry blossoms">
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <a href="/res/IMG-20150512-WA0008.jpg" class="thumbnail" title="Fallen trees in a forest">
-                            <img src="/res/IMG-20150512-WA0008.jpg" alt="Fallen trees in a forest">
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <header active="art">
+            <!-- Header content loaded by JQuery -->
+        </header>
+        <div class="galleria">
+            <img src="/res/DSC_0748.jpg" alt="A lakeside tree">
+            <img src="/res/DSC_0757.jpg" alt="A seagull in the distance">
+            <img src="/res/DSC_0765.jpg" alt="A seagull in flight">
+            <img src="/res/DSC_0773.jpg" alt="A swan displaying its wingspan">
+            <img src="/res/DSC_0794.jpg" alt="A seagull taking off from water">
+            <img src="/res/DSC_0795.jpg" alt="A duck in water">
+            <img src="/res/IMG-20150512-WA0001.jpg" alt="Cherry blossoms">
+            <img src="/res/IMG-20150512-WA0002.jpg" alt="A Canadian goose in a lake">
+            <img src="/res/IMG-20150512-WA0003.jpg" alt="A squirrel eating">
+            <img src="/res/IMG-20150512-WA0004.jpg" alt="Cherry flowers on a branch">
+            <img src="/res/IMG-20150512-WA0005.jpg" alt="Colourful trees">
+            <img src="/res/IMG-20150512-WA0006.jpg" alt="A tree stump">
+            <img src="/res/IMG-20150512-WA0007.jpg" alt="Cherry blossoms">
+            <img src="/res/IMG-20150512-WA0008.jpg" alt="Fallen trees in a forest">
         </div>
     </body>
 

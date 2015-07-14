@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>Photography | Wesley Heung</title>
+        <title>Food | Wesley Heung</title>
         <!-- Load JavaScript and CSS components -->
         <!-- Load JQuery -->
         <!-- Google CDN -->
@@ -35,6 +35,14 @@
                 });
             });
         </script>
+        <!-- Galleria -->
+        <script src="/js/galleria/galleria-1.4.2.min.js"></script>
+        <script>
+            $(function () {
+                Galleria.loadTheme('/js/galleria/themes/classic/galleria.classic.min.js');
+                Galleria.run('.galleria');
+            });
+        </script>
         <!-- Custom CSS -->
         <link rel="stylesheet" type="text/css" href="/styles/styles.css">
         <!-- Header -->
@@ -45,9 +53,9 @@
         <header active="art">
             <!-- Header content loaded by JQuery -->
         </header>
-        <div id="skrollr-body" class="container-fluid">
-            <div class="row">
-            </div>
+        <div class="galleria">
+            <img src="/res/2015-05-13 00.06.47.jpg" alt="Bread on a cooling rack">
+            <img src="/res/bread.jpg" alt="Bread on a cutting board">
         </div>
     </body>
 

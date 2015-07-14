@@ -81,6 +81,8 @@
 
 /* Footer */
 #page-footer {
+    position: absolute;
+    bottom: 0;
     width: 100%;
     background-image: linear-gradient(to top,#3c3c3c 0,#222 100%);
     padding-top: 1em;
@@ -191,18 +193,19 @@ html, body {
     height: 100%;
 }
 
-.full-size {
-    min-height: 100%;
-    min-width: 100%;
-    background-color: #fff;
-}
-
-.full-size row {
-    padding: 0;
-}
-
 body {
     padding-top: 50px;
+}
+
+@media (min-width:767px) {
+    body {
+        padding-top: 50px;
+    }
+}
+
+.full-size {
+    min-height: 100vh;
+    background-color: #fff;
 }
 
 /* Articles */
@@ -245,4 +248,13 @@ body {
         background-size: 100% auto;
         background-repeat: no-repeat, no-repeat;
     }
+}
+
+/* Galleria */
+.galleria {
+    position: absolute;
+    width: calc(100vw);
+    height: calc(100vh - 50px);
+    background: #000;
+    overflow: no-content no-content;
 }

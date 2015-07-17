@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Galleria Classic Theme</title>
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+        <style>
+            /* Demo styles */
+            html,body{background:#222;margin:0;}
+            body{border-top:4px solid #000;}
+            .content{color:#777;font:12px/1.4 "helvetica neue",arial,sans-serif;width:620px;margin:20px auto;}
+            h1{font-size:12px;font-weight:normal;color:#ddd;margin:0;}
+            p{margin:0 0 20px}
+            a {color:#22BCB9;text-decoration:none;}
+            .cred{margin-top:20px;font-size:11px;}
+            
+            /* This rule is read by Galleria to define the gallery height: */
+            #galleria{height:320px}
+            
+        </style>
+
+        <!-- load jQuery -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+
+        <!-- load Galleria -->
+        <script src="../../galleria-1.4.2.min.js"></script>
+
+        <link rel="stylesheet" href="galleria.custom.css"></link>
+        <script src="galleria.custom.js"></script>
+    </head>
+    <body>
+        <div class="content">
+            <h1>Galleria Classic Theme</h1>
+            <p>Demonstrating a basic gallery example.</p>
+
+            <!-- Adding gallery images. We use resized thumbnails here for better performance, but it’s not necessary -->
+            <div id="galleria">
+                <a href="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Biandintz_eta_zaldiak_-_modified2.jpg/800px-Biandintz_eta_zaldiak_-_modified2.jpg">
+                    <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Biandintz_eta_zaldiak_-_modified2.jpg/100px-Biandintz_eta_zaldiak_-_modified2.jpg" data-big="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Biandintz_eta_zaldiak_-_modified2.jpg/1280px-Biandintz_eta_zaldiak_-_modified2.jpg" data-title="Biandintz eta zaldiak" data-description="Horses on Bianditz mountain, in Navarre, Spain." alt="Horses">
+                </a>
+                <a href="http://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Athabasca_Rail_at_Brule_Lake.jpg/800px-Athabasca_Rail_at_Brule_Lake.jpg">
+                    <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Athabasca_Rail_at_Brule_Lake.jpg/100px-Athabasca_Rail_at_Brule_Lake.jpg" data-big="http://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Athabasca_Rail_at_Brule_Lake.jpg/1280px-Athabasca_Rail_at_Brule_Lake.jpg" data-title="Athabasca Rail" data-description="The Athabasca River railroad track at the mouth of Brulé Lake in Alberta, Canada." alt="Railroad">
+                </a>
+            </div>
+        </div>
+
+        <script>
+            // Load the custom theme
+            Galleria.loadTheme('galleria.custom.js');
+            
+            // Initialize Galleria
+            Galleria.run('#galleria');
+        </script>
+    </body>
+</html>

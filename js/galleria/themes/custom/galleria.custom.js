@@ -66,6 +66,8 @@
                 info.bind('click:fast', function () {
                     info.toggle();
                 });
+                // Show info by default
+                info.toggle();
             } else {
                 info.show();
                 this.$('info-link, info-close').hide();

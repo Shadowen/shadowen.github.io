@@ -51,9 +51,9 @@
 
 .galleria-theme-custom .galleria-counter {
     position: absolute;
-    bottom: 10px;
+    top: 10px;
     left: 10px;
-    text-align: right;
+    text-align: left;
     color: #fff;
     font: normal 11px/1 arial,sans-serif;
     z-index: 1;
@@ -73,16 +73,15 @@
 
 .galleria-theme-custom .galleria-info {
     width: 50%;
-    top: 15px;
-    left: 15px;
+    bottom: 0px;
+    left: 10px;
     z-index: 2;
     position: absolute;
 }
 
 .galleria-theme-custom .galleria-info-text {
-    background-color: #000;
+    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,255));
     padding: 12px;
-    display: none;
     /* IE7 */ zoom: 1;
 }
 
@@ -99,17 +98,20 @@
     color: #bbb;
 }
 
+.galleria-theme-custom .galleria-info-close::before {
+    font-family: 'Glyphicons Halflings';
+    content: '\e014';
+}
+
 .galleria-theme-custom .galleria-info-close {
     width: 9px;
     height: 9px;
     position: absolute;
     top: 5px;
     right: 5px;
-    background-position: -753px -11px;
     opacity: .5;
     filter: alpha(opacity=50);
     cursor: pointer;
-    display: none;
 }
 
 .galleria-theme-custom .notouch .galleria-info-close:hover {
@@ -127,8 +129,11 @@
     opacity: .7;
     filter: alpha(opacity=70);
     position: absolute;
+    left: 10px;
+    bottom: 0px;
     width: 20px;
     height: 20px;
+    display: none;
     cursor: pointer;
     background-color: #000;
 }
@@ -230,7 +235,7 @@
     display: block;
 }
 
-.galleria-theme-custom .galleria-thumb-nav-left, .galleria-theme-custom .galleria-thumb-nav-right, .galleria-theme-custom .galleria-info-link, .galleria-theme-custom .galleria-info-close, .galleria-theme-custom .galleria-image-nav-left, .galleria-theme-custom .galleria-image-nav-right {
+.galleria-theme-custom .galleria-thumb-nav-left, .galleria-theme-custom .galleria-thumb-nav-right, .galleria-theme-custom .galleria-info-link, .galleria-theme-custom .galleria-image-nav-left, .galleria-theme-custom .galleria-image-nav-right {
     background-image: url(custom-map.png);
     background-repeat: no-repeat;
 }
@@ -248,8 +253,10 @@
     right: 10px;
     z-index: 4;
     cursor: pointer;
-    opacity: .3;
     font-family: 'Glyphicons Halflings';
+    color: #fff;
+    opacity: 0.5;
+    filter: alpha(50);
 }
 
 .galleria-theme-custom .galleria-fscr::before {
@@ -258,4 +265,9 @@
 
 .galleria-theme-custom .galleria-fscr.active::before {
     content: '\e097';
+}
+
+.galleria-theme-custom .galleria-fscr:hover {
+    opacity: 1.0;
+    filter: alpha(100);
 }

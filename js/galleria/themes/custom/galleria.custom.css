@@ -27,11 +27,12 @@
 
 .galleria-theme-custom .galleria-thumbnails-container {
     height: 50px;
-    bottom: 0;
+    bottom: 0px;
     position: absolute;
     left: 10px;
     right: 10px;
     z-index: 2;
+    transition: bottom 1.5s;
 }
 
 .galleria-theme-custom .galleria-carousel .galleria-thumbnails-list {
@@ -249,7 +250,7 @@
     width: auto;
     height: auto;
     position: absolute;
-    bottom: 0px;
+    bottom: 10px;
     right: 10px;
     z-index: 4;
     cursor: pointer;

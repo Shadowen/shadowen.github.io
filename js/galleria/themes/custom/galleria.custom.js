@@ -26,6 +26,8 @@
         },
         init: function (options) {
             var gallery = this;
+            var isFullscreen = false;
+
             Galleria.requires(1.4, 'This theme requires Galleria 1.4 or later');
 
             // Move the info element into the stage
@@ -94,7 +96,7 @@
                     gallery.$('loader').show().fadeTo(200, 0.4);
                 }
                 window.setTimeout(function () {
-                    activate(e)
+                    activate(e);
                 }, touch ? 300 : 0);
                 gallery.$('info').toggle(gallery.hasInfo());
             });
@@ -105,16 +107,32 @@
             // Idle
             gallery.bind('idle_enter', function () {
                 gallery.$('fscr').fadeOut();
+                if (isFullscreen) {
+                    gallery.$('thumbnails-container').animate({ bottom: '-50px', opacity: 0 }, { queue: false });
+                    gallery.$('info').animate({ bottom: '0px', opacity: 0 }, { queue: false });
+                }
             });
             gallery.bind('idle_exit', function () {
                 gallery.$('fscr').fadeIn();
+                if (isFullscreen) {
+                    gallery.$('thumbnails-container').animate({ bottom: '0px', opacity: 1 }, { queue: false });
+                    gallery.$('info').animate({ bottom: '60px', opacity: 1 }, { queue: false });
+                }
             });
             // Enter and exit fullscreen
             gallery.bind('fullscreen_enter', function () {
+                isFullscreen = true;
                 gallery.$('fscr').addClass('active');
+                gallery.$('thumbnails-container').css('position', 'fixed');
+                gallery.$('stage').css('bottom', '0px');
+                gallery.$('info').css('bottom', '60px');
             });
             gallery.bind('fullscreen_exit', function () {
+                isFullscreen = false;
                 gallery.$('fscr').removeClass('active');
+                gallery.$('thumbnails-container').css('position', 'absolute');
+                gallery.$('stage').css('bottom', '60px');
+                gallery.$('info').css('bottom', '0px');
             });
         }
     });

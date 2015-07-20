@@ -2,17 +2,12 @@
 <html>
 
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Wesley Heung</title>
         <!-- Load JavaScript and CSS components -->
         <!-- Load JQuery -->
         <!-- Google CDN -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <!-- Local -->
-        <script>
-            if (typeof $ == 'undefined') {
-                document.write("<script src='/js/jquery-1.11.3.min.js'></script\>");
-            }
-        </script>
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
@@ -20,18 +15,6 @@
         <script>
             $(function() {
                 $('[data-toggle="tooltip"]').tooltip();
-            });
-        </script>
-        <!-- Google Code Prettify -->
-        <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=desert"></script>
-        <!-- Skrollr -->
-        <script src="/js/skrollr.min.js"></script>
-        <script>
-             $(function () {
-                skrollr.init({
-                    smoothScrolling: false,
-                    forceHeight: false
-                });
             });
         </script>
         <!-- Custom CSS -->

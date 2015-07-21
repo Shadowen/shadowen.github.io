@@ -26,20 +26,28 @@
         },
         init: function (options) {
             var gallery = this;
+            var touch = Galleria.TOUCH;
             var isFullscreen = false;
 
             Galleria.requires(1.4, 'This theme requires Galleria 1.4 or later');
 
             // Move the info element into the stage
             gallery.$('info').detach().appendTo(gallery.$('stage'));
-            // add some elements
+            // add elements
             gallery.addElement('info-link', 'info-close');
             gallery.append({
                 'info': ['info-link', 'info-close']
             });
-            // cache some stuff
-            var info = gallery.$('info-link,info-close,info-text'),
-            touch = Galleria.TOUCH;
+            // Bind click
+            gallery.$('info-text,info-close').bind('click:fast', function () {
+                gallery.$('info-text,info-close').fadeOut();
+                gallery.$('info-link').fadeIn();
+            });
+            gallery.$('info-link').bind('click:fast', function () {
+                gallery.$('info-text,info-close').fadeIn();
+                gallery.$('info-link').fadeOut();
+            });
+
 
             // Full screen button
             gallery.addElement('fscr');
@@ -48,24 +56,15 @@
             });
             gallery.appendChild('stage', 'fscr');
 
-            // show loader & counter with opacity
-            this.$('loader,counter').show().css('opacity', 0.4);
+            // show loader & counter
+            this.$('loader,counter').show();
 
             // some stuff for non-touch browsers
             if (!touch) {
                 gallery.addIdleState(gallery.get('image-nav-left'), { left: -50 });
                 gallery.addIdleState(gallery.get('image-nav-right'), { right: -50 });
-                gallery.addIdleState(gallery.get('counter'), { opacity: 0 });
-            }
-
-            // toggle info
-            if (options._toggleInfo === true) {
-                info.bind('click:fast', function () {
-                    info.toggle();
-                });
-            } else {
-                info.show();
-                this.$('info-link, info-close').hide();
+                gallery.addIdleState(gallery.get('info-close'), { opacity: 0 });
+                gallery.addIdleState(gallery.get('info-link'), { opacity: 0 })
             }
 
             // bind some stuff
@@ -107,6 +106,7 @@
             // Idle
             gallery.bind('idle_enter', function () {
                 gallery.$('fscr').fadeOut();
+                gallery.$('counter').fadeOut();
                 if (isFullscreen) {
                     gallery.$('thumbnails-container').animate({ bottom: '-50px', opacity: 0 }, { queue: false });
                     gallery.$('info').animate({ bottom: '0px', opacity: 0 }, { queue: false });
@@ -114,6 +114,7 @@
             });
             gallery.bind('idle_exit', function () {
                 gallery.$('fscr').fadeIn();
+                gallery.$('counter').fadeIn();
                 if (isFullscreen) {
                     gallery.$('thumbnails-container').animate({ bottom: '0px', opacity: 1 }, { queue: false });
                     gallery.$('info').animate({ bottom: '60px', opacity: 1 }, { queue: false });

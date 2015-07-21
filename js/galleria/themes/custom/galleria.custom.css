@@ -14,6 +14,7 @@
     -moz-user-select: none;
     -webkit-user-select: none;
     -o-user-select: none;
+    user-select: none;
 }
 
 .galleria-theme-custom .galleria-stage {
@@ -54,10 +55,9 @@
     position: absolute;
     top: 10px;
     left: 10px;
-    text-align: left;
     color: #fff;
-    font: normal 11px/1 arial,sans-serif;
     z-index: 1;
+    opacity: 0.4;
 }
 
 .galleria-theme-custom .galleria-loader {
@@ -67,52 +67,61 @@
     position: absolute;
     top: calc(50% - 10px);
     right: calc(50% - 10px);
+    opacity: 0.4;
     z-index: 2;
     display: none;
     background: url(custom-loader.gif) no-repeat 2px 2px;
 }
 
 .galleria-theme-custom .galleria-info {
-    width: 50%;
+    width: 100%;
     bottom: 0px;
     left: 10px;
     z-index: 2;
     position: absolute;
+    transition:;
 }
 
 .galleria-theme-custom .galleria-info-text {
     background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,255));
     padding: 12px;
+    cursor: default;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     /* IE7 */ zoom: 1;
 }
 
 .galleria-theme-custom .galleria-info-title {
-    font: bold 12px/1.1 arial,sans-serif;
+    font-weight: bold;
     margin: 0;
     color: #fff;
-    margin-bottom: 7px;
 }
 
 .galleria-theme-custom .galleria-info-description {
-    font: italic 12px/1.4 georgia,serif;
+    font-style: italic;
     margin: 0;
+    margin-bottom: 3px;
     color: #bbb;
 }
 
 .galleria-theme-custom .galleria-info-close::before {
-    font-family: 'Glyphicons Halflings';
-    content: '\e014';
+    content: 'click to hide...';
 }
 
 .galleria-theme-custom .galleria-info-close {
-    width: 9px;
-    height: 9px;
+    text-align: center;
+    height: auto;
     position: absolute;
-    top: 5px;
-    right: 5px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin-top: 100px;
     opacity: .5;
     filter: alpha(opacity=50);
-    cursor: pointer;
 }
 
 .galleria-theme-custom .notouch .galleria-info-close:hover {
@@ -131,12 +140,17 @@
     filter: alpha(opacity=70);
     position: absolute;
     left: 10px;
-    bottom: 0px;
+    bottom: 10px;
     width: 20px;
     height: 20px;
     display: none;
     cursor: pointer;
     background-color: #000;
+}
+
+.galleria-theme-custom .galleria-info-link::before {
+    font-family: 'Glyphicons Halflings';
+    content: '\e086';
 }
 
 .galleria-theme-custom.notouch .galleria-info-link:hover {
@@ -236,7 +250,7 @@
     display: block;
 }
 
-.galleria-theme-custom .galleria-thumb-nav-left, .galleria-theme-custom .galleria-thumb-nav-right, .galleria-theme-custom .galleria-info-link, .galleria-theme-custom .galleria-image-nav-left, .galleria-theme-custom .galleria-image-nav-right {
+.galleria-theme-custom .galleria-thumb-nav-left, .galleria-theme-custom .galleria-thumb-nav-right, .galleria-theme-custom .galleria-image-nav-left, .galleria-theme-custom .galleria-image-nav-right {
     background-image: url(custom-map.png);
     background-repeat: no-repeat;
 }

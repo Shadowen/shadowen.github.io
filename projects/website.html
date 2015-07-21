@@ -45,34 +45,35 @@
 
     <body>
         <header active="projects"><!-- Header content loaded by JQuery --></header>
-        <div id="skrollr-body" class="container-fluid">
-            <div class="row">
-                <div class="jumbotron" style="background-image: url(/res/website_code.bmp)">
-                    <div class="caption">
-                        <h1>wesley.heungs.com
-                            <a href="https://github.com/Shadowen/shadowen.github.io" class="btn btn-primary repo-link">Go to GitHub</a>
-                            <br>
-                            <small>A handwritten portfolio website</small>
-                        </h1>
-                        <span class="label label-html">HTML 5</span>
-                        <span class="label label-jquery">JQuery</span>
-                        <span class="label label-bootstrap">Bootstrap</span>
+        <div id="skrollr-body">
+            <div class="container-fluid full-size">
+                <div class="row">
+                    <div class="jumbotron" style="background-image: url(/res/website_code.bmp)">
+                        <div class="caption">
+                            <h1>wesley.heungs.com
+                                <a href="https://github.com/Shadowen/shadowen.github.io" class="btn btn-primary repo-link">Go to GitHub</a>
+                                <br>
+                                <small>A handwritten portfolio website</small>
+                            </h1>
+                            <span class="label label-html">HTML 5</span>
+                            <span class="label label-jquery">JQuery</span>
+                            <span class="label label-bootstrap">Bootstrap</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row parallax-bg" style="background-image: url(/res/DSC_0779.jpg);" data-top="background-position: 0% 0%;" data-bottom="background-position:0% 100%;">
-                <div class="col-md-offset-1 col-md-10 article-content">
-                    <h1>Design Goals</h1>
-                    <p>To build a website that would supercede the <a href="http://wesley229.wix.com/design-portfolio">previous one</a>, I decided that I would have to go beyond the limited power of a free website builder. Therefore, I explored options available in common HTML, CSS, and Javascript libraries. They are listed <a href="#libraries">below</a>. This website was also a good way to practice using several web development tools, covered in the <a href="#tools">tools</a> section. This website was a learning experience as I built it.</p>
-                    <h2>Engaging</h2>
-                    <p>This site uses beautiful Bootstrap styles and Parallax animations from Skrollr to engage the audience. User interface components are familiar Bootstrap fonts, colours, and designs, but all background pictures are originally created for this website. Check out my <a href="/art/photography.html">photography</a> for more pictures.</p>
-                    <h2>Reactive</h2>
-                    <p>A beautiful website is useless if no one can see it! With so many different devices accessing the internet, it is important to ensure that the website is usable by everyone. Using Twitter Bootstrap's built-in styles and careful CSS formatting, the website is designed to be easy to navigate on any device, regardless of screen size and input method.</p>
-                    <p>For example, to facilitate touch users, there are no dropdown menus or tooltips that only appear when the cursor is hovering over them. I promise. After all, it's not easy to hover with a touchscreen! All hover actions are strictly cosmetic, like <a data-toggle="tooltip" title="Haha, just kidding. This is a tooltip!">hyperlinks</a> being underlined on hover.</p>
-                    <p>To accomodate many different screen sizes, Bootstrap's reactive column layout is utilized. See the projects page render in many different viewports! This ensures eliminates the horribly wide blank margins often found in websites today.</p>
-                    <h2>Maintainable</h2>
-                    <p>In order to minimize the effort required to keep the site running, pages are designed to be easily added, edited, and removed. Headers and other elements conserved across multiple pages are stored as seperate files that are loaded into each page by JQuery's <code>load(...)</code> function, as below. This ensures that the menu bars and navigation features are identical from page to page and allows me to make a single change that affects all the pages.</p>
-                    <pre class="prettyprint">/* On document load */
+                <div class="row parallax-bg" style="background-image: url(/res/DSC_0779.jpg);" data-top="background-position: 0% 0%;" data-bottom="background-position:0% 100%;">
+                    <div class="col-md-offset-1 col-md-10 article-content">
+                        <h1>Design Goals</h1>
+                        <p>To build a website that would supercede the <a href="http://wesley229.wix.com/design-portfolio">previous one</a>, I decided that I would have to go beyond the limited power of a free website builder. Therefore, I explored options available in common HTML, CSS, and Javascript libraries. They are listed <a href="#libraries">below</a>. This website was also a good way to practice using several web development tools, covered in the <a href="#tools">tools</a> section. This website was a learning experience as I built it.</p>
+                        <h2>Engaging</h2>
+                        <p>This site uses beautiful Bootstrap styles and Parallax animations from Skrollr to engage the audience. User interface components are familiar Bootstrap fonts, colours, and designs, but all background pictures are originally created for this website. Check out my <a href="/art/photography.html">photography</a> for more pictures.</p>
+                        <h2>Reactive</h2>
+                        <p>A beautiful website is useless if no one can see it! With so many different devices accessing the internet, it is important to ensure that the website is usable by everyone. Using Twitter Bootstrap's built-in styles and careful CSS formatting, the website is designed to be easy to navigate on any device, regardless of screen size and input method.</p>
+                        <p>For example, to facilitate touch users, there are no dropdown menus or tooltips that only appear when the cursor is hovering over them. I promise. After all, it's not easy to hover with a touchscreen! All hover actions are strictly cosmetic, like <a data-toggle="tooltip" title="Haha, just kidding. This is a tooltip!">hyperlinks</a> being underlined on hover.</p>
+                        <p>To accomodate many different screen sizes, Bootstrap's reactive column layout is utilized. See the projects page render in many different viewports! This ensures eliminates the horribly wide blank margins often found in websites today.</p>
+                        <h2>Maintainable</h2>
+                        <p>In order to minimize the effort required to keep the site running, pages are designed to be easily added, edited, and removed. Headers and other elements conserved across multiple pages are stored as seperate files that are loaded into each page by JQuery's <code>load(...)</code> function, as below. This ensures that the menu bars and navigation features are identical from page to page and allows me to make a single change that affects all the pages.</p>
+                        <pre class="prettyprint">/* On document load */
 $(function () {
     /* Load the header HTML */
     $("header").load("/header.html", function () {
@@ -83,54 +84,54 @@ $(function () {
     window.onhashchange = shiftWindow; // Internal page anchor
     if (window.location.hash) shiftWindow(); // Reference from external link
 });
-                    </pre>
-                    <p>The majority of styling is done with Cascading Style Sheets (CSS). This streamlines the creation of pages and ensures that similar content is styled consistently across the website.</p>
-                    <h1 id="libraries">Libraries</h1>
-                    <table class="table table-hover">
-                        <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Usage</th>
-                            <th>Website</th>
-                        </tr>
+                        </pre>
+                        <p>The majority of styling is done with Cascading Style Sheets (CSS). This streamlines the creation of pages and ensures that similar content is styled consistently across the website.</p>
+                        <h1 id="libraries">Libraries</h1>
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Usage</th>
+                                <th>Website</th>
+                            </tr>
                 </thead>
-                        <tbody>
-                        <tr>
-                            <td>JQuery</td>
-                            <td>DOM Manipulation</td>
-                            <td><a href="https://jquery.com/">https://jquery.com/</a></td>
-                        </tr>
-                        <tr>
-                            <td>Bootstrap</td>
-                            <td>Reactive CSS and visual components</td>
-                            <td><a href="http://getbootstrap.com/">http://getbootstrap.com/</a></td>
-                        </tr>
-                        <tr>
-                            <td>Google Code Prettify</td>
-                            <td>Embedded source code</td>
-                            <td><a href="https://github.com/google/code-prettify/">https://github.com/google/code-prettify/</a></td>
-                        </tr>
-                        <tr>
-                            <td>Skrollr</td>
-                            <td>Parallax backgrounds</td>
-                            <td><a href="http://prinzhorn.github.io/skrollr/">http://prinzhorn.github.io/skrollr/</a></td>
-                        </tr>
-                        <tr>
-                            <td>Galleria</td>
-                            <td>Photo galleries</td>
-                            <td><a href="http://galleria.io/">http://galleria.io/</a></td>
-                        </tr>
-                        <tr>
-                            <td>Font Awesome</td>
-                            <td>Glyphicons</td>
-                            <td><a href="http://fortawesome.github.io/Font-Awesome/"></td>
-                        </tr>
+                            <tbody>
+                            <tr>
+                                <td>JQuery</td>
+                                <td>DOM Manipulation</td>
+                                <td><a href="https://jquery.com/">https://jquery.com/</a></td>
+                            </tr>
+                            <tr>
+                                <td>Bootstrap</td>
+                                <td>Reactive CSS and visual components</td>
+                                <td><a href="http://getbootstrap.com/">http://getbootstrap.com/</a></td>
+                            </tr>
+                            <tr>
+                                <td>Google Code Prettify</td>
+                                <td>Embedded source code</td>
+                                <td><a href="https://github.com/google/code-prettify/">https://github.com/google/code-prettify/</a></td>
+                            </tr>
+                            <tr>
+                                <td>Skrollr</td>
+                                <td>Parallax backgrounds</td>
+                                <td><a href="http://prinzhorn.github.io/skrollr/">http://prinzhorn.github.io/skrollr/</a></td>
+                            </tr>
+                            <tr>
+                                <td>Galleria</td>
+                                <td>Photo galleries</td>
+                                <td><a href="http://galleria.io/">http://galleria.io/</a></td>
+                            </tr>
+                            <tr>
+                                <td>Font Awesome</td>
+                                <td>Glyphicons</td>
+                                <td><a href="http://fortawesome.github.io/Font-Awesome/"></td>
+                            </tr>
                 </tbody>
-                    </table>
-                    <p><b>JQuery</b> is an essential library when using Javascript. It allows easy selection of DOM elements with CSS-like selectors, adds callbacks on important events, and generally makes working with HTML much easier. It is also a dependency for many other libraries because of its aforementioned utility.</p>
-                    <p><b>Bootstrap</b> (aka Twitter Bootstrap) is a HTML, CSS, and Javascript framework that is primarily used for decorating mobile responsive websites. It comes with many built-in styles and graphical features, which makes it a perfect foundation to build the site's visuals on.</p>
-                    <p><b>Google Code Prettify</b> is a small Javascript library used to enhance the display of source code in the website. It is primarily used for its syntax highlighting feature. For example, it is used here to highlight the following <a href="https://en.wikipedia.org/wiki/Scheme_(programming_language)">Scheme</a> fragment:</p>
-                    <div class="framed"><pre class="prettyprint lang-scheme">(define ^
+                        </table>
+                        <p><b>JQuery</b> is an essential library when using Javascript. It allows easy selection of DOM elements with CSS-like selectors, adds callbacks on important events, and generally makes working with HTML much easier. It is also a dependency for many other libraries because of its aforementioned utility.</p>
+                        <p><b>Bootstrap</b> (aka Twitter Bootstrap) is a HTML, CSS, and Javascript framework that is primarily used for decorating mobile responsive websites. It comes with many built-in styles and graphical features, which makes it a perfect foundation to build the site's visuals on.</p>
+                        <p><b>Google Code Prettify</b> is a small Javascript library used to enhance the display of source code in the website. It is primarily used for its syntax highlighting feature. For example, it is used here to highlight the following <a href="https://en.wikipedia.org/wiki/Scheme_(programming_language)">Scheme</a> fragment:</p>
+                        <div class="framed"><pre class="prettyprint lang-scheme">(define ^
     (lambda (bs exp)
         (^-help bs exp 1)
     )
@@ -144,78 +145,80 @@ $(function () {
 		)
 	)
 )</pre>
-                        <p class="caption">A sample of Google Code Prettify on a small Scheme fragment.</p></div>
-                    <p><b>Skrollr</b> is one of the most popular parallax scrolling libraries in use today. It handles the backgrounds other parallax animations throughout the site.</p>
-                    <p><b>Galleria</b> is a 100% responsive free photo and video gallery library written in JavaScript. Basic usage requires no JavaScript knowledge, but of course custom themes can be applied to the interface. The theme used in the <a href="\art">Art</a> pages was designed to fulfill the unique needs of this website.</p>
-                    <p><b>Font Awesome</b> is a free icon font originally designed for Bootstrap. By using CSS classes, one can easily place a large variety of icons.</p>
-                    <div class="framed row">
-                        <div class="col-md-6">
-                            <b>HTML:</b>
-                            <pre class="prettyprint lang-html">&lt;i class="fa fa-info-circle"&gt;&lt;/i&gt;
+                            <p class="caption">A sample of Google Code Prettify on a small Scheme fragment.</p></div>
+                        <p><b>Skrollr</b> is one of the most popular parallax scrolling libraries in use today. It handles the backgrounds other parallax animations throughout the site.</p>
+                        <p><b>Galleria</b> is a 100% responsive free photo and video gallery library written in JavaScript. Basic usage requires no JavaScript knowledge, but of course custom themes can be applied to the interface. The theme used in the <a href="\art">Art</a> pages was designed to fulfill the unique needs of this website.</p>
+                        <p><b>Font Awesome</b> is a free icon font originally designed for Bootstrap. By using CSS classes, one can easily place a large variety of icons.</p>
+                        <div class="framed row">
+                            <div class="col-md-6">
+                                <b>HTML:</b>
+                                <pre class="prettyprint lang-html">&lt;i class="fa fa-info-circle"&gt;&lt;/i&gt;
 &lt;i class="fa fa-wifi"&gt;&lt;/i&gt;
 &lt;i class="fa fa-database"&gt;&lt;/i&gt;
 &lt;i class="fa fa-comment"&gt;&lt;/i&gt;
 &lt;i class="fa fa-file"&gt;&lt;/i&gt;
 &lt;i class="fa fa-play"&gt;&lt;/i&gt;</pre>
-                        </div>
-                        <div class="col-md-6">
-                            <b>Output:</b>
-                            <div class="center-element" style="font-size: x-large;">
-                                <i class="fa fa-info-circle"></i>
-                                <i class="fa fa-wifi"></i>
-                                <i class="fa fa-database"></i>
-                                <i class="fa fa-comment"></i>
-                                <i class="fa fa-file"></i>
-                                <i class="fa fa-play"></i>
                             </div>
-                        </div>  <p class="col-md-12 caption">A sample of some Font Awesome icons.</p>
-                    </div>
-                    <h1 id="tools">Tools</h1>
-                    <table class="table table-hover">
-                        <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Usage</th>
-                            <th>Website</th>
-                        </tr>
+                            <div class="col-md-6">
+                                <b>Output:</b>
+                                <div class="center-element" style="font-size: x-large;">
+                                    <i class="fa fa-info-circle"></i>
+                                    <i class="fa fa-wifi"></i>
+                                    <i class="fa fa-database"></i>
+                                    <i class="fa fa-comment"></i>
+                                    <i class="fa fa-file"></i>
+                                    <i class="fa fa-play"></i>
+                                </div>
+                            </div>  <p class="col-md-12 caption">A sample of some Font Awesome icons.</p>
+                        </div>
+                        <h1 id="tools">Tools</h1>
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Usage</th>
+                                <th>Website</th>
+                            </tr>
                 </thead>
-                        <tbody>
-                        <tr>
-                            <td>Sublime Text 3</td>
-                            <td>Code formatting with <a href="https://github.com/victorporof/Sublime-HTMLPrettify">HTMLPrettify</a> plugin</td>
-                            <td><a href="http://www.sublimetext.com/3">http://www.sublimetext.com/3</a></td>
-                        </tr>
-                        <tr>
-                            <td>Microsoft WebMatrix 3</td>
-                            <td>Local webserver hosting</td>
-                            <td><a href="https://www.microsoft.com/web/webmatrix/">https://www.microsoft.com/web/webmatrix/</a></td>
-                        </tr>
-                        <tr>
-                            <td>GitHub</td>
-                            <td>Version control and web hosting</td>
-                            <td><a href="https://github.com/">https://github.com/</a></td>
-                        </tr>
-                        <tr>
-                            <td>heungs.com</td>
-                            <td>Front end url</td>
-                            <td><a href="http://heungs.com/">http://heungs.com/</a></td>
-                        </tr>
+                            <tbody>
+                            <tr>
+                                <td>Sublime Text 3</td>
+                                <td>Code formatting with <a href="https://github.com/victorporof/Sublime-HTMLPrettify">HTMLPrettify</a> plugin</td>
+                                <td><a href="http://www.sublimetext.com/3">http://www.sublimetext.com/3</a></td>
+                            </tr>
+                            <tr>
+                                <td>Microsoft WebMatrix 3</td>
+                                <td>Local webserver hosting</td>
+                                <td><a href="https://www.microsoft.com/web/webmatrix/">https://www.microsoft.com/web/webmatrix/</a></td>
+                            </tr>
+                            <tr>
+                                <td>GitHub</td>
+                                <td>Version control and web hosting</td>
+                                <td><a href="https://github.com/">https://github.com/</a></td>
+                            </tr>
+                            <tr>
+                                <td>heungs.com</td>
+                                <td>Front end url</td>
+                                <td><a href="http://heungs.com/">http://heungs.com/</a></td>
+                            </tr>
                 </tbody>
-                    </table>
-                    <p>The project began as a simple HTML page manually created in a folder on my desktop. However, it began to grow beyond my capabilities to organize as the number of pages increased. To manage the HTML and CSS files, I began using <strong>Sublime Text 3</strong>. The syntax highlighting offered by the base program was useful, but the real power came with the HTMLPrettify plugin that could auto-format the long files.</p>
-                    <p>Soon after, I realized that I would need a webserver of some sort to host the pages. This would allow me additional power over what was served in a few crucial places: default pages (<code>index.html</code>) and error pages (<code>404.html</code>) for this reason, I used Microsoft's <strong>WebMatrix 3</strong>.</p>
-                    <p>Pretty soon, the site was large enough that I had to worry about breaking it with accidental changes. At this point, it was important to use a version control system (VCS). Of course, <strong>GitHub</strong> would be a logical choice, since much of my source code was contained in the cloud there. I created the repository at <a href="https://github.com/Shadowen/shadowen.github.io">github.com/Shadowen/shadowen.github.io</a>. But GitHub also had an unexpected benefit of hosting static pages as well. Therefore, the website was also hosted at <a href="http://shadowen.github.io">shadowen.github.io</a> with the help of GitHub Pages.</p>
-                    <p>Finally, the front end url was chosen to be a subdomain of my family domain. With a simple CNAME entry, the website was available at <a href="http://wesley.heungs.com">wesley.heungs.com</a>.</p>
-                    <h1>Obstacles</h1>
-                    <p>Any project has obstacles to its success. Here are some that I encountered and how I overcame them.</p>
-                    <h2>Mobile Parallax</h2>
-                    <p>Skrollr is easy enough to create parallax backgrounds with. To obtain the effect I wanted, I simply tagged the <code>div</code> element that the background is contained in with <code><b>data-top</b>="background-position: 0% 0%;"</code> and <code><b>data-bottom</b>="background-position:0% 100%;"</code> attributes.</p>
-                    <p>However, making the website work for mobile is much more difficult. As mentioned by the <a href="https://github.com/Prinzhorn/skrollr#mobile-support">Skrollr README</a>, many mobile browsers tend to delay or disable JavaScript while scrolling. So to my surprise when the page was first loaded on a mobile device, it was simply impossible to scroll down the page since Skrollr itself was disabled!</p>
-                    <p>Fortunately, an easy solution is also documented. Skrollr is designed to make use of an element with the id <code>skrollr-body</code> to fake scrolling on mobile devices. Simply adding an extra <code>div</code> solved the problem.</p>
-                    <h2>Image compression</h2>
-                    <p>As I added images to the website, the repository size started to grow unbelievably quickly. It turns out that pushing megabytes of photos takes a long time. Instead, using <a href="http://www.gimp.org/">GIMP</a>, I simply scaled the pictures down to a reasonable resolution and decreased quality as necessary. As a result, the website loads much quicker, and my repository is much smaller.</p>
+                        </table>
+                        <p>The project began as a simple HTML page manually created in a folder on my desktop. However, it began to grow beyond my capabilities to organize as the number of pages increased. To manage the HTML and CSS files, I began using <strong>Sublime Text 3</strong>. The syntax highlighting offered by the base program was useful, but the real power came with the HTMLPrettify plugin that could auto-format the long files.</p>
+                        <p>Soon after, I realized that I would need a webserver of some sort to host the pages. This would allow me additional power over what was served in a few crucial places: default pages (<code>index.html</code>) and error pages (<code>404.html</code>) for this reason, I used Microsoft's <strong>WebMatrix 3</strong>.</p>
+                        <p>Pretty soon, the site was large enough that I had to worry about breaking it with accidental changes. At this point, it was important to use a version control system (VCS). Of course, <strong>GitHub</strong> would be a logical choice, since much of my source code was contained in the cloud there. I created the repository at <a href="https://github.com/Shadowen/shadowen.github.io">github.com/Shadowen/shadowen.github.io</a>. But GitHub also had an unexpected benefit of hosting static pages as well. Therefore, the website was also hosted at <a href="http://shadowen.github.io">shadowen.github.io</a> with the help of GitHub Pages.</p>
+                        <p>Finally, the front end url was chosen to be a subdomain of my family domain. With a simple CNAME entry, the website was available at <a href="http://wesley.heungs.com">wesley.heungs.com</a>.</p>
+                        <h1>Obstacles</h1>
+                        <p>Any project has obstacles to its success. Here are some that I encountered and how I overcame them.</p>
+                        <h2>Mobile Parallax</h2>
+                        <p>Skrollr is easy enough to create parallax backgrounds with. To obtain the effect I wanted, I simply tagged the <code>div</code> element that the background is contained in with <code><b>data-top</b>="background-position: 0% 0%;"</code> and <code><b>data-bottom</b>="background-position:0% 100%;"</code> attributes.</p>
+                        <p>However, making the website work for mobile is much more difficult. As mentioned by the <a href="https://github.com/Prinzhorn/skrollr#mobile-support">Skrollr README</a>, many mobile browsers tend to delay or disable JavaScript while scrolling. So to my surprise when the page was first loaded on a mobile device, it was simply impossible to scroll down the page since Skrollr itself was disabled!</p>
+                        <p>Fortunately, an easy solution is also documented. Skrollr is designed to make use of an element with the id <code>skrollr-body</code> to fake scrolling on mobile devices. Simply adding an extra <code>div</code> solved the problem.</p>
+                        <h2>Image compression</h2>
+                        <p>As I added images to the website, the repository size started to grow unbelievably quickly. It turns out that pushing megabytes of photos takes a long time. Instead, using <a href="http://www.gimp.org/">GIMP</a>, I simply scaled the pictures down to a reasonable resolution and decreased quality as necessary. As a result, the website loads much quicker, and my repository is much smaller.</p>
+                    </div>
                 </div>
             </div>
+            <div id="page-footer"><!-- Footer content loaded by JQuery --></div>
         </div>
     </body>
 

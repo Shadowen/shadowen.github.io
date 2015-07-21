@@ -90,13 +90,14 @@
 
 /* Footer */
 #page-footer {
-    position: absolute;
+    position: relative;
+    height: 50px;
     bottom: 0;
     width: 100%;
+    padding: 10px;
     background-image: linear-gradient(to top,#3c3c3c 0,#222 100%);
-    padding-top: 1em;
-    padding-bottom: 1em;
     color: #9d9d9d;
+    font-size: small;
 }
 
 /* Custom jumbotrons for article headers */
@@ -213,7 +214,8 @@ body {
 }
 
 .full-size {
-    min-height: calc(100vh - 50px);
+    /* Account for header and footer heights */
+    min-height: calc(100vh - 50px - 50px);
     background-color: #fff;
 }
 

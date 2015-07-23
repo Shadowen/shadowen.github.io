@@ -108,10 +108,6 @@
     color: #bbb;
 }
 
-.galleria-theme-custom .galleria-info-close::before {
-    content: 'click to hide...';
-}
-
 .galleria-theme-custom .galleria-info-close {
     text-align: center;
     height: auto;
@@ -119,9 +115,9 @@
     left: 0px;
     right: 0px;
     bottom: 0px;
-    margin-top: 100px;
-    opacity: .5;
+    color: rgba(150, 150, 150, 0.5);
     filter: alpha(opacity=50);
+    cursor: default;
 }
 
 .galleria-theme-custom .notouch .galleria-info-close:hover {

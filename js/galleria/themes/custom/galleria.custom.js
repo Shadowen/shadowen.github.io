@@ -35,6 +35,7 @@
             gallery.$('info').detach().appendTo(gallery.$('stage'));
             // add elements
             gallery.addElement('info-link', 'info-close');
+            gallery.$('info-close').text('click to hide...');
             gallery.append({
                 'info': ['info-link', 'info-close']
             });
@@ -56,8 +57,8 @@
             });
             gallery.appendChild('stage', 'fscr');
 
-            // show loader & counter
-            this.$('loader,counter').show();
+            // show loader
+            this.$('loader').show();
 
             // some stuff for non-touch browsers
             if (!touch) {
@@ -65,6 +66,7 @@
                 gallery.addIdleState(gallery.get('image-nav-right'), { right: -50 });
                 gallery.addIdleState(gallery.get('info-close'), { opacity: 0 });
                 gallery.addIdleState(gallery.get('info-link'), { opacity: 0 })
+                gallery.addIdleState(gallery.get('counter'), { opacity: 0 });
             }
 
             // bind some stuff
@@ -106,7 +108,6 @@
             // Idle
             gallery.bind('idle_enter', function () {
                 gallery.$('fscr').fadeOut();
-                gallery.$('counter').fadeOut();
                 if (isFullscreen) {
                     gallery.$('thumbnails-container').animate({ bottom: '-50px', opacity: 0 }, { queue: false });
                     gallery.$('info').animate({ bottom: '0px', opacity: 0 }, { queue: false });
@@ -114,7 +115,6 @@
             });
             gallery.bind('idle_exit', function () {
                 gallery.$('fscr').fadeIn();
-                gallery.$('counter').fadeIn();
                 if (isFullscreen) {
                     gallery.$('thumbnails-container').animate({ bottom: '0px', opacity: 1 }, { queue: false });
                     gallery.$('info').animate({ bottom: '60px', opacity: 1 }, { queue: false });

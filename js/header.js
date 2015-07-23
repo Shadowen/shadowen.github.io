@@ -16,7 +16,8 @@ $(function () {
     /* Load the footer HTML */
     $("#page-footer").load("/footer.html");
 
-
+    // Allows .selectable elements to be selected in a single click.
+    // http://keestalkstech.com/2014/04/click-to-select-all-on-the-pre-element/
     $('.selectable').click(function () {
         //        if (this.select) {
         //            console.log('select');

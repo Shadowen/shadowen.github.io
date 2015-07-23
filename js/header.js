@@ -15,4 +15,22 @@ $(function () {
 
     /* Load the footer HTML */
     $("#page-footer").load("/footer.html");
+
+
+    $('.selectable').click(function () {
+        //        if (this.select) {
+        //            console.log('select');
+        //            this.select();
+        //        } else if (document.selection) {
+        //            console.log('document');
+        //            var range = document.body.createTextRange();
+        //            range.moveToElementText(this);
+        //            range.select();
+        //        } else
+        if (window.getSelection) {
+            var range = document.createRange();
+            range.selectNodeContents(this);
+            window.getSelection().addRange(range);
+        }
+    });
 });

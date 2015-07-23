@@ -1,3 +1,9 @@
+@import url("http://weloveiconfonts.com/api/?family=fontawesome|fontelico");
+/* fontelico */
+[class*="fontelico-"]:before {
+  font-family: 'fontelico', sans-serif;
+}
+
 /* Front page */
 @keyframes panning {
     0% {
@@ -186,6 +192,10 @@
     background-color: #006d8b;
 }
 
+.label-javascript {
+    background-color: #000dff;
+}
+
 .label-bootstrap {
     background-color: #870274;
 }
@@ -273,4 +283,16 @@ body {
     height: calc(100vh - 50px);
     background: #000;
     overflow: no-content no-content;
+}
+
+.bookmarklet {
+    padding: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    cursor: move;
+}
+.bookmarklet:before {
+    content: attr(data-display-text);
 }

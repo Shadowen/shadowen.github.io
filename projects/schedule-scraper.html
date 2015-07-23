@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Schedule Scraper | Wesley Heung</title>
+        <!-- Load JavaScript and CSS components -->
+        <!-- Load JQuery -->
+        <!-- Google CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- Local -->
+        <script>
+            if (typeof $ == 'undefined') {
+                document.write("<script src='/js/jquery-1.11.3.min.js'></script\>");
+            }
+        </script>
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script>
+            $(function() {
+                $('[data-toggle="tooltip"]').tooltip();
+            });
+        </script>
+        <!-- Google Code Prettify -->
+        <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=desert"></script>
+        <!-- Skrollr -->
+        <script src="/js/skrollr.min.js"></script>
+        <script>
+              $(function () {
+                skrollr.init({
+                    smoothScrolling: false,
+                    forceHeight: false
+                });
+            });
+        </script>
+        <!-- Custom CSS -->
+        <link rel="stylesheet" type="text/css" href="/styles/styles.css">
+        <!-- Header -->
+        <script src="/js/header.js"></script>
+    </head>
+
+    <body>
+        <header active="projects">
+            <!-- Header content loaded by JQuery -->
+        </header>
+        <div id="skrollr-body">
+            <div class="container-fluid full-size">
+                <div class="row">
+                    <div class="jumbotron" style="background-image: url(/res/DSC_0748.jpg)">
+                        <div class="caption">
+                            <h1>Schedule Scraper
+                                <a href="https://github.com/Shadowen/ScheduleScraper" class="btn btn-primary repo-link">Go to Github</a>
+                                <br>
+                                <small>Export RoSI/ACORN timetables to iCal format.</small>
+                            </h1>
+                            <span class="label label-javascript">JavaScript</span>
+                            <span class="label label-jquery">JQuery</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row parallax-bg" style="background-image: url(/res/DSC_0779.jpg);" data-top="background-position: 0% 0%;" data-bottom="background-position:0% 100%;">
+                    <div class="col-xs-12 col-md-offset-1 col-md-10 article-content">
+                        <p class="lead">Generate an <code>.ical</code> file from your RoSI or ACORN timetable. The iCal file can then be easily imported into your application of choice, such as Google Calendar.</p>
+                        <h1>Usage</h1>
+                        <p>Three super easy ways to use this script!</p>
+                        <h2>Bookmarklet (recommended)</h2>
+                        <p>Run the script from a bookmark. Simple and reusable!</p>
+                        <ol>
+                            <li>
+                                Drag and drop <a href="javascript:$(function(){$.getScript('https://gitcdn.xyz/repo/Shadowen/ScheduleScraper/master/ScheduleScraper.js')});" class="btn btn-primary bookmarklet" data-display-text="this button"><span style="display: none">Schedule scraper</span></a> into your Bookmarks bar.
+                                <div class="well">
+                                    <span class="fontelico-chrome"></span> <b>Chrome:</b> You may need to push <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>B</kbd> to open your Bookmarks bar.
+                                </div>
+                            </li>
+                            <li>Navigate to the timetable to be exported.</li>
+                            <li>Click the bookmark!</li>
+                        </ol>
+                        <h2>Run in address bar</h2>
+                        <ol>
+                            <li>Navigate to the timetable to be exported.</li>
+                            <li>
+                                Paste the following script into your address bar.
+                                <pre class="prettyprint lang-javascript selectable">javascript:$(function(){$.getScript('https://gitcdn.xyz/repo/Shadowen/ScheduleScraper/master/ScheduleScraper.js')});</pre>
+                            </li>
+                            <li>Prepend the script with <code>javascript:</code> if it's not already there.</li>
+                            <li>Hit <kbd>enter</kbd>!</li>
+                        </ol>
+                        <h2>Run in JavaScript console</h2>
+                        <ol>
+                            <li>Navigate to the timetable to be exported.</li>
+                            <li>Open the JavaScript console with <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>J</kbd>.</li>
+                            <li>
+                                Paste the following script into the console.
+                                <pre class="prettyprint lang-javascript selectable">$(function(){$.getScript('https://gitcdn.xyz/repo/Shadowen/ScheduleScraper/master/ScheduleScraper.js')});</pre>
+                            </li>
+                            <li>Press <kbd>enter</kbd>!</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div id="page-footer"><!-- Footer content loaded by JQuery --></div>
+        </div>
+    </body>
+
+</html>

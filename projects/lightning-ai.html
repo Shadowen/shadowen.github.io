@@ -107,23 +107,7 @@
                         <h2>Features</h2>
                         <h3>Java 8 Idioms</h3>
                         <p>Much of the source code is written in the new Java 8 style, allowing for code to be both efficiently parallelized and fluently read. For example, the following code goes through the <code>unitQueue</code> and finds a unit to train each unit in the queue.</p>
-                        <pre class="prettyprint lang-java">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Auto train
+                        <pre class="prettyprint lang-java">// Auto train
 BuildManager.unitQueue.stream()
     .forEach(
         toTrain -> GameHandler.getMyUnits().stream()
@@ -135,23 +119,7 @@ BuildManager.unitQueue.stream()
                         <p>Internal interfaces are fully documented with detailed Javadocs. In Eclipse, these Javadocs can be accessed by simply hovering the cursor over the class or method.</p>
                         <div class="row">
                             <div class="col-md-6">
-                                <pre class="prettyprint lang-java">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/**
+                                <pre class="prettyprint lang-java">/**
 * Process a command meant for a {@link #DebugModule} and search through
 * {@link #debugModules} for the correct one to forward it to.
 * 
@@ -166,23 +134,7 @@ BuildManager.unitQueue.stream()
                         <h3>Debug Manager</h3>
                         <p>A powerful, yet simple to implement debug manager allows the programmer to quickly and easily see what the AI is thinking at any given time. The debugger is modular so different sets of information can be quickly displayed or hidden at a keystroke.</p>
                         <p>Writing a module for the debugger is as simple as knowing what you want to show. The main module resides in a static class called <code>DebugManager</code>. To display information through it, simply register a fire-and-forget <code>DebugModule</code>, as below.</p>
-                        <pre class="prettyprint lang-java">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-createDebugModule("test")
+                        <pre class="prettyprint lang-java">createDebugModule("test")
     .addCommand(
         null,
         (c) -> GameHandler.sendText("Type \"/test help \" for this page.")

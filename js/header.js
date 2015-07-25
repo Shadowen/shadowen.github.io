@@ -17,6 +17,10 @@ $(function () {
     $("#page-footer").load("/footer.html");
 
     // Allows .selectable elements to be selected in a single click.
+    //$('.selectable').hover(function () { }, function () { });
+    //    background-color: rgba(255,255,255,0.6);
+    //    color: rgb(0,0,0);
+    //    content: 'Click to select text';
     // http://keestalkstech.com/2014/04/click-to-select-all-on-the-pre-element/
     $('.selectable').click(function () {
         //        if (this.select) {

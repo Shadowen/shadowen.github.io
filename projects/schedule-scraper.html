@@ -47,8 +47,8 @@
         </header>
         <div id="skrollr-body">
             <div class="container-fluid full-size">
-                <div class="row">
-                    <div class="jumbotron" style="background-image: url(/res/DSC_0748.jpg)">
+                <div class="row parallax-bg" style="background-image: url(/res/DSC_0748.jpg)" data-top="background-position: 0% 0%;" data-bottom="background-position:0% 100%;">
+                    <div class="jumbotron" style="background-color: rgba(0,0,0,0)">
                         <div class="caption">
                             <h1>Schedule Scraper
                                 <a href="https://github.com/Shadowen/ScheduleScraper" class="btn btn-primary repo-link">Go to Github</a>
@@ -59,10 +59,8 @@
                             <span class="label label-jquery">JQuery</span>
                         </div>
                     </div>
-                </div>
-                <div class="row parallax-bg" style="background-image: url(/res/DSC_0779.jpg);" data-top="background-position: 0% 0%;" data-bottom="background-position:0% 100%;">
                     <div class="col-xs-12 col-md-offset-1 col-md-10 article-content">
-                        <p class="lead">Generate an <code>.ical</code> file from your RoSI or ACORN timetable. The iCal file can then be easily imported into your application of choice, such as Google Calendar.</p>
+                        <p class="lead">Generate a <code>.ical</code> file from your RoSI or ACORN timetable. The iCal file can then be easily imported into your application of choice, like iCalendar or Google Calendar.</p>
                         <h1>Usage</h1>
                         <p>Three super easy ways to use this script!</p>
                         <h2>Bookmarklet (recommended)</h2>
@@ -82,7 +80,7 @@
                             <li>Navigate to the timetable to be exported.</li>
                             <li>
                                 Paste the following script into your address bar.
-                                <pre class="prettyprint lang-javascript selectable">javascript:$(function(){$.getScript('https://gitcdn.xyz/repo/Shadowen/ScheduleScraper/master/ScheduleScraper.js')});</pre>
+                                <pre class="prettyprint lang-javascript selectable">javascript:($(function(){$.getScript('https://gitcdn.xyz/repo/Shadowen/ScheduleScraper/master/ScheduleScraper.js')}))</pre>
                             </li>
                             <li>Prepend the script with <code>javascript:</code> if it's not already there.</li>
                             <li>Hit <kbd>enter</kbd>!</li>
@@ -90,13 +88,41 @@
                         <h2>Run in JavaScript console</h2>
                         <ol>
                             <li>Navigate to the timetable to be exported.</li>
-                            <li>Open the JavaScript console with <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>J</kbd>.</li>
+                            <li>Open the JavaScript console with <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>J</kbd>.</li>
                             <li>
                                 Paste the following script into the console.
                                 <pre class="prettyprint lang-javascript selectable">$(function(){$.getScript('https://gitcdn.xyz/repo/Shadowen/ScheduleScraper/master/ScheduleScraper.js')});</pre>
                             </li>
                             <li>Press <kbd>enter</kbd>!</li>
                         </ol>
+                        <h1>Challenges</h1>
+                        <h2>Cross-Origin Requests</h2>
+                        <p>Most of the data comes from the currently loaded page at <a href="https://acorn.utoronto.ca/sws/welcome.do?welcome.dispatch#/">https://acorn.utoronto.ca/sws/welcome.do?welcome.dispatch#/</a>, but the script also makes a request to <a href="http://www.apsc.utoronto.ca/timetable/fall.html">http://www.apsc.utoronto.ca/timetable/fall.html</a> - the "master" timetable. It pulls professor names and course start dates from this page, which is not included in ACORN. Unfortunately, these two pages reside on different subdomains, so most modern browsers block this request under the <a href="http://en.wikipedia.org/wiki/Same_origin_policy">Same Origin Policy</a>.</p>
+                        <p>To resolve this issue, the data needs to be reformatted as <a href="https://en.wikipedia.org/wiki/JSONP">JSONP</a> by an external server (since you ARE allowed to request scripts cross-domain). I used <a href="http://alloworigin.com/">http://alloworigin.com/</a> since it was allowed HTTPS connections for free. Unfortunately, I managed to <a href="https://github.com/limtaesu/alloworigin/issues/8">send the server into an infinite loop</a>, but a quick reboot managed to fix that issue.</p>
+                        <h2>Asynchronous Javascript</h2>
+                        <p>Because AJAX requests are by definition asynchronous, the work to process them has to end up in callback functions. This results in an <a href="http://blog.getify.com/promises-part-2/#nested-callbacks">inversion of control</a>. This is due to callbacks nested within each other deeper and deeper.</p>
+                        <div class="framed">
+                            <pre class="prettyprint lang-javascript">makeAjaxRequest(function(data) {
+    processData(data, function(processedData) {
+        displayData(processedData);
+    });
+});</pre>
+                            <p class="caption">"Inversion of control" due to nested callbacks</p>
+                        </div>
+                        <p>One way to handle this would be to implement an event queue that waits for each AJAX call to complete before starting the next. This structure would implicitly pass the output of one function to the input of the next. There is also room for an error handling function.</p>
+                        <div class="framed">
+                            <pre class="prettyprint lang-javascript">executeSequentially(makeAjaxRequest, processData, displayData, errorHandler);
+                            </pre>
+                            <p class="caption">AJAX Queue runner</p>
+                        </div>
+                        <p>However, the prevalent method is to use <a href="https://www.promisejs.org/">Promises</a>.</p>
+                        <div class="framed">
+                            <pre class="prettyprint lang-javascript">makeAjaxRequest().then(processData).then(displayData);
+                            </pre>
+                            <p class="caption">AJAX calls using promises</p>
+                        </div>
+                        <p>The promises are <code>resolved</code> or <code>rejected</code> inside the callbacks, but the caller never has to worry about that. Promises can simply be chained onto one another and the results of each will be passed to the next.</p>
+                        <p>For the purposes of this project, the <code>Deferred</code> objects provided by <code>JQuery</code> were sufficient, so I avoided the usual loading of a promise library.</p>
                     </div>
                 </div>
             </div>

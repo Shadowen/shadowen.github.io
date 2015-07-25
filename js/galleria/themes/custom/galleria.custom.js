@@ -124,14 +124,14 @@
             gallery.bind('fullscreen_enter', function () {
                 isFullscreen = true;
                 gallery.$('fscr').addClass('active');
-                gallery.$('thumbnails-container').css('position', 'fixed');
+                gallery.$('thumbnails-container').css('position', 'absolute').css('background-color', 'rgba(0,0,0,0.8)');
                 gallery.$('stage').css('bottom', '0px');
-                gallery.$('info').css('bottom', '60px');
+                gallery.$('info').css('bottom', '50px');
             });
             gallery.bind('fullscreen_exit', function () {
                 isFullscreen = false;
                 gallery.$('fscr').removeClass('active');
-                gallery.$('thumbnails-container').css('position', 'absolute');
+                gallery.$('thumbnails-container').css('position', 'absolute').css('background-color','none');
                 gallery.$('stage').css('bottom', '60px');
                 gallery.$('info').css('bottom', '0px');
             });

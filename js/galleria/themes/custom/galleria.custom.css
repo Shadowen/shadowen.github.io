@@ -27,9 +27,9 @@
 }
 
 .galleria-theme-custom .galleria-thumbnails-container {
-    height: 50px;
-    bottom: 0px;
     position: absolute;
+    height: 70px;
+    bottom: 0px;
     left: 10px;
     right: 10px;
     z-index: 2;
@@ -79,7 +79,6 @@
     left: 10px;
     z-index: 2;
     position: absolute;
-    transition:;
 }
 
 .galleria-theme-custom .galleria-info-text {

@@ -28,7 +28,8 @@
             });
         </script>
         <!-- Google Code Prettify -->
-        <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=desert"></script>
+        <script src="https://cdn.rawgit.com/google/code-prettify/master/src/prettify.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/google/code-prettify/master/styles/desert.css">
         <!-- Skrollr -->
         <script src="/js/skrollr.min.js"></script>
         <script>
@@ -43,6 +44,16 @@
         <link rel="stylesheet" type="text/css" href="/styles/styles.css">
         <!-- Header -->
         <script src="/js/header.js"></script>
+        <!-- Load bookmarklet -->
+        <script>
+            $(function () {
+                $('pre.bookmarklet').load('https://cdn.gitcdn.xyz/cdn/Shadowen/ScheduleScraper/master/bookmarklet.js',
+                function (response) {
+                    $('a.bookmarklet').attr('href', 'javascript:' + response);
+                    prettyPrint();
+                });
+            });
+        </script>
     </head>
 
     <body>
@@ -71,7 +82,7 @@
                         <p>Run the script from a bookmark. Simple and reusable!</p>
                         <ol>
                             <li>
-                                Drag and drop <a href="javascript:$(function(){$.getScript('https://gitcdn.xyz/repo/Shadowen/ScheduleScraper/master/ScheduleScraper.js')});" class="btn btn-primary bookmarklet" data-display-text="this button"><span style="display: none">Schedule scraper</span></a> into your Bookmarks bar.
+                                Drag and drop <a class="btn btn-primary bookmarklet" data-display-text="this button"><span style="display: none">Schedule scraper</span></a> into your Bookmarks bar.
                                 <div class="well">
                                     <span class="fontelico-chrome"></span> <b>Chrome:</b> You may need to push <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>B</kbd> to open your Bookmarks bar.
                                 </div>
@@ -83,10 +94,9 @@
                         <ol>
                             <li>Navigate to the timetable to be exported.</li>
                             <li>
-                                Paste the following script into your address bar.
-                                <pre class="prettyprint lang-javascript selectable">javascript:($(function(){$.getScript('https://gitcdn.xyz/repo/Shadowen/ScheduleScraper/master/ScheduleScraper.js')}))</pre>
+                                In your address bar, delete everything and type <code>javascript:</code>, then paste the following code.
+                                <pre class="prettyprint lang-javascript selectable bookmarklet"></pre>
                             </li>
-                            <li>Prepend the script with <code>javascript:</code> if it's not already there.</li>
                             <li>Hit <kbd>enter</kbd>!</li>
                         </ol>
                         <h2>Run in JavaScript console</h2>
@@ -95,7 +105,10 @@
                             <li>Open the JavaScript console with <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>J</kbd>.</li>
                             <li>
                                 Paste the following script into the console.
-                                <pre class="prettyprint lang-javascript selectable">$(function(){$.getScript('https://gitcdn.xyz/repo/Shadowen/ScheduleScraper/master/ScheduleScraper.js')});</pre>
+                                <pre class="prettyprint lang-javascript selectable bookmarklet"></pre>
+                                <div class="well">
+                                    <span class="fontelico-firefox"></span> <b>Firefox:</b> You may need to type <code>allow paste</code> into your console to enable pasting into the console.
+                                </div>
                             </li>
                             <li>Press <kbd>enter</kbd>!</li>
                         </ol>

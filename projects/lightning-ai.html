@@ -106,8 +106,9 @@
                         <p>These managers are all implemented as <code>static</code> classes so that they can be accessed from anywhere inside the program at any time. This avoids the earlier issue of passing around various managers, simplifying initialization and reducing the number of member variables inside each class.</p>
                         <h2>Features</h2>
                         <h3>Java 8 Idioms</h3>
-                        <p>Much of the source code is written in the new Java 8 style, allowing for code to be both efficiently parallelized and fluently read. For example, the following code goes through the <code>unitQueue</code> and finds a unit to train each unit in the queue.</p>
-                        <pre class="prettyprint lang-java">// Auto train
+                        <p>Much of the source code is written in the new Java 8 fluent functional-chaining style, allowing for code to be both efficiently parallelized and fluently read. For example, the following code goes through the <code>unitQueue</code> and finds a unit to train each unit in the queue.</p>
+                        <div class="framed">
+                            <pre class="prettyprint lang-java">// Auto train
 BuildManager.unitQueue.stream()
     .forEach(
         toTrain -> GameHandler.getMyUnits().stream()
@@ -115,9 +116,10 @@ BuildManager.unitQueue.stream()
             .filter(u -> !u.isTraining())
             .findFirst()
             .ifPresent(u -> u.train(toTrain)));</pre>
+                        </div>
                         <h3>Complete Documentation</h3>
                         <p>Internal interfaces are fully documented with detailed Javadocs. In Eclipse, these Javadocs can be accessed by simply hovering the cursor over the class or method.</p>
-                        <div class="row">
+                        <div class="row framed">
                             <div class="col-md-6">
                                 <pre class="prettyprint lang-java">/**
 * Process a command meant for a {@link #DebugModule} and search through
@@ -134,7 +136,8 @@ BuildManager.unitQueue.stream()
                         <h3>Debug Manager</h3>
                         <p>A powerful, yet simple to implement debug manager allows the programmer to quickly and easily see what the AI is thinking at any given time. The debugger is modular so different sets of information can be quickly displayed or hidden at a keystroke.</p>
                         <p>Writing a module for the debugger is as simple as knowing what you want to show. The main module resides in a static class called <code>DebugManager</code>. To display information through it, simply register a fire-and-forget <code>DebugModule</code>, as below.</p>
-                        <pre class="prettyprint lang-java">createDebugModule("test")
+                        <div class="framed">
+                            <pre class="prettyprint lang-java">createDebugModule("test")
     .addCommand(
         null,
         (c) -> GameHandler.sendText("Type \"/test help \" for this page.")
@@ -145,8 +148,8 @@ BuildManager.unitQueue.stream()
         (c) -> GameHandler.sendText("The secret command " + c + "is activating... Shh!")
         )
     .setDraw(() -> DrawEngine.drawTextMap(320, 240, "Testing..."));</pre>
-                        <p>This creates a module that can be toggled with the command
-                            <kbd>/test</kbd> in the game client.</p>
+                            <p>This creates a module that can be toggled with the command <kbd>/test</kbd> in the game client.</p>
+                        </div>
                         <p>The internal interface relies heavily on function-chaining to make the declarations fluent. Used in conjunction with Java 8 lambda functions and functional interfaces, the entire interface is very straightforward to read. The registration process was designed specifically so that the declaration would remain in the same lexical scope as the declaring class. This provides access to private and protected variables without having to add clunky <code>public</code> accessor methods, leading to quick and easy debugging.</p>
                         <p>And you're good to go! The debugger should not interfere with regular operation of the class. It simply serves as an easy way to display the internal state of various parts of the AI.</p>
                     </div>

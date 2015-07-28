@@ -41,7 +41,7 @@
             });
         </script>
         <!-- Custom CSS -->
-        <link rel="stylesheet" type="text/css" href="/styles/styles.css">
+        <link rel="stylesheet" type="text/css" href="/css/styles.css">
         <!-- Header -->
         <script src="/js/header.js"></script>
         <!-- Load bookmarklet -->
@@ -84,7 +84,9 @@
                             <li>
                                 Drag and drop <a class="btn btn-primary bookmarklet" data-display-text="this button"><span style="display: none">Schedule scraper</span></a> into your Bookmarks bar.
                                 <div class="well">
-                                    <span class="fontelico-chrome"></span> <b>Chrome:</b> You may need to push <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>B</kbd> to open your Bookmarks bar.
+                                    <span class="icon-chrome"></span> <b>Chrome:</b> You may need to push <kbd>ctrl</kbd> + <kbd>shift</kbd> + <kbd>B</kbd> to open your Bookmarks bar.<br>
+                                    <span class="icon-firefox"></span> <b>Firefox: </b> Follow <a href="https://support.mozilla.org/en-US/kb/bookmarks-toolbar-display-favorite-websites#w_show-or-hide-the-bookmarks-toolbar">Mozilla's instructions</a> to show your Bookmarks bar.<br>
+                                    <span class="icon-safari"></span> <b>Safari:</b> You may need to push <kbd>cmd</kbd> + <kbd>shift</kbd> + <kbd>B</kbd> to view your Bookmarks bar.
                                 </div>
                             </li>
                             <li>Navigate to the timetable to be exported.</li>
@@ -107,10 +109,15 @@
                                 Paste the following script into the console.
                                 <pre class="prettyprint lang-javascript selectable bookmarklet"></pre>
                                 <div class="well">
-                                    <span class="fontelico-firefox"></span> <b>Firefox:</b> You may need to type <code>allow paste</code> into your console to enable pasting into the console.
+                                    <span class="icon-firefox"></span> <b>Firefox:</b> You may need to type <code>allow pasting</code> into your console to enable pasting into the console. Follow the instructions that appear if they appear.
                                 </div>
                             </li>
-                            <li>Press <kbd>enter</kbd>!</li>
+                            <li>
+                                Press <kbd>enter</kbd>!
+                                   <div class="well">
+                                    <span class="icon-ie"></span> <b>Internet Explorer:</b> Press <kbd>ctrl</kbd> + <kbd>enter</kbd> instead. And stop using Internet Explorer: Web developers hate you.
+                                </div>
+                            </li>
                         </ol>
                         <h1>Challenges</h1>
                         <h2>Cross-Origin Requests</h2>

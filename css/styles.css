@@ -1,8 +1,5 @@
-@import url("http://weloveiconfonts.com/api/?family=fontawesome|fontelico");
-/* fontelico */
-[class*="fontelico-"]:before {
-    font-family: 'fontelico', sans-serif;
-}
+/* Import fonts */
+@import url("fontello.css");
 
 /* Front page */
 @keyframes panning {
@@ -135,6 +132,11 @@
     position: relative;
     float: right;
     top: 0px;
+}
+
+/* Wells that have margin above */
+.well{
+    margin-top: 10px;
 }
 
 /* Gallery thumbnails*/

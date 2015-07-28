@@ -1,4 +1,5 @@
 /* Based on Galleria Classic Theme 2012-08-07 | https://raw.github.com/aino/galleria/master/LICENSE | (c) Aino */
+@import url('/css/fontello.css');
 
 #galleria-loader {
     height: 1px!important;
@@ -143,11 +144,6 @@
     background-color: #000;
 }
 
-.galleria-theme-custom .galleria-info-link::before {
-    font-family: 'Glyphicons Halflings';
-    content: '\e086';
-}
-
 .galleria-theme-custom.notouch .galleria-info-link:hover {
     opacity: 1;
     filter: alpha(opacity=100);
@@ -263,18 +259,9 @@
     right: 10px;
     z-index: 4;
     cursor: pointer;
-    font-family: 'Glyphicons Halflings';
     color: #fff;
     opacity: 0.5;
     filter: alpha(50);
-}
-
-.galleria-theme-custom .galleria-fscr::before {
-    content: '\e140';
-}
-
-.galleria-theme-custom .galleria-fscr.active::before {
-    content: '\e097';
 }
 
 .galleria-theme-custom .galleria-fscr:hover {

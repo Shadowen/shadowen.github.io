@@ -44,7 +44,7 @@
                 gallery.$('info-text,info-close').fadeOut();
                 gallery.$('info-link').fadeIn();
             });
-            gallery.$('info-link').bind('click:fast', function () {
+            gallery.$('info-link').addClass('icon-info-circled').bind('click:fast', function () {
                 gallery.$('info-text,info-close').fadeIn();
                 gallery.$('info-link').fadeOut();
             });
@@ -52,7 +52,7 @@
 
             // Full screen button
             gallery.addElement('fscr');
-            gallery.$('fscr').click(function () {
+            gallery.$('fscr').addClass('icon-resize-full').click(function () {
                 gallery.toggleFullscreen();
             });
             gallery.appendChild('stage', 'fscr');
@@ -123,15 +123,15 @@
             // Enter and exit fullscreen
             gallery.bind('fullscreen_enter', function () {
                 isFullscreen = true;
-                gallery.$('fscr').addClass('active');
+                gallery.$('fscr').removeClass('icon-resize-full').addClass('icon-resize-small');
                 gallery.$('thumbnails-container').css('position', 'absolute').css('background-color', 'rgba(0,0,0,0.8)');
                 gallery.$('stage').css('bottom', '0px');
                 gallery.$('info').css('bottom', '50px');
             });
             gallery.bind('fullscreen_exit', function () {
                 isFullscreen = false;
-                gallery.$('fscr').removeClass('active');
-                gallery.$('thumbnails-container').css('position', 'absolute').css('background-color','none');
+                gallery.$('fscr').addClass('icon-resize-full').removeClass('icon-resize-small');
+                gallery.$('thumbnails-container').css('position', 'absolute').css('background-color', 'none');
                 gallery.$('stage').css('bottom', '60px');
                 gallery.$('info').css('bottom', '0px');
             });

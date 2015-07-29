@@ -9,8 +9,8 @@
 
 .front-page {
     position: relative;
+    height: calc(100vh - 50px);
     background-size: cover;
-    background-size: 300%;
     background-repeat: no-repeat;
 }
 

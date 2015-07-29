@@ -1,29 +1,6 @@
 /* Import fonts */
 @import url("fontello.css");
 
-/* Front page */
-@keyframes panning {
-    0% {
-        background-position: 0% 0%;
-    }
-
-    25% {
-        background-position: 100% 100%;
-    }
-
-    50% {
-        background-position: 100% 0%;
-    }
-
-    75% {
-        background-position: 0% 100%;
-    }
-
-    100% {
-        background-position: 0% 0%;
-    }
-}
-
 .overlay-darken {
     height: 100%;
     width: 100%;
@@ -32,14 +9,9 @@
 
 .front-page {
     position: relative;
-    height: 100%;
-    width: 100%;
+    background-size: cover;
     background-size: 300%;
     background-repeat: no-repeat;
-    animation-name: panning;
-    animation-duration: 60s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
 }
 
 .front-page h1 {
@@ -55,10 +27,6 @@
 
 /* Tablets+ */
 @media (min-width: 767px) {
-    .front-page {
-        background-size: 150%;
-    }
-
     .front-page h1 {
         font-size: 700%;
     }
@@ -113,9 +81,6 @@
 }
 
 .row > .jumbotron > .caption {
-    position: relative;
-    left: 20%;
-    width: 80%;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
 }
@@ -135,7 +100,7 @@
 }
 
 /* Wells that have margin above */
-.well{
+.well {
     margin-top: 10px;
 }
 
@@ -231,7 +196,8 @@ body {
     min-height: calc(100vh - 50px - 50px);
     background-color: #fff;
 }
-.galleria.full-size{
+
+.galleria.full-size {
     /* Bug fix */
     min-height: calc(100vh - 50px - 50px - 1px);
 }
@@ -301,4 +267,31 @@ a.bookmarklet {
 
 a.bookmarklet::before {
     content: attr(data-display-text);
+}
+
+/* Selectable code */
+pre.selectable {
+    position: relative;
+}
+
+pre.selectable:not(:hover)::after {
+    font-family: '"Helvetica Neue",Helvetica,Arial,sans-serif';
+    font-size: 14px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    content: 'Click to select.';
+}
+
+pre.selectable:not(:hover)::before {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.7);
+    border-radius: 4px;
+    content: '';
 }

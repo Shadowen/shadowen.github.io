@@ -40,9 +40,11 @@
         <!-- Load bookmarklet -->
         <script>
             $(function () {
-                $('pre.bookmarklet').load('https://cdn.gitcdn.xyz/cdn/Shadowen/ScheduleScraper/master/bookmarklet.js',
+                $('pre.bookmarklet')
+                .load('https://raw.githack.com/Shadowen/ScheduleScraper/master/bookmarklet.js',
                 function (response) {
-                    $('a.bookmarklet').attr('href', 'javascript:' + response);
+                    $('a.bookmarklet')
+                    .attr('href', 'javascript:' + response);
                     prettyPrint();
                 });
             });
@@ -140,6 +142,12 @@
                         </div>
                         <p>The promises are <code>resolved</code> or <code>rejected</code> inside the callbacks, but the caller never has to worry about that. Promises can simply be chained onto one another and the results of each will be passed to the next.</p>
                         <p>For the purposes of this project, the <code>Deferred</code> objects provided by <code>JQuery</code> were sufficient, so I avoided the usual loading of a promise library.</p>
+                        <h2>When to execute?</h2>
+                        <p>Not only must the script execute its own asynchronous components at the correct time, but it must also start execution after the document has been loaded. Usually, it is easy to attach the script to an <code>onLoad()</code> event so the script will be run as a callback, but since we do not know when the user will run the script, this is impossible. For example, if the user runs the script before the page is ready, then the script may fail to execute (since part of the page is missing). If the user runs the script after the page has been fully loaded, the <code>onLoad()</code> event has already been called and the script will never be run. Instead, we use the following short snippet to run the script immediately if the page is loaded, but attach the script to <code>onLoad()</code> if not.</p>
+                        <div class="framed">
+                            <pre class="prettyprint lang-javascript">document.readyState == 'complete' ? run() : window.onload = run;</pre>
+                            <p class="caption"><code>run</code> immediately if page is loaded, otherwise wait for the page to load.</p>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,127 @@
+---
+title: Autonomous Connect-Four Robot
+summary: "The 2015 AER201 project"
+repositories: ["https://github.com/Shadowen/ZergRush"]
+banner-image: "/res/2015-03-14 23.12.20.jpg"
+article-background: "/res/2015-03-14 23.29.22.jpg"
+
+thumbnail: "/res/20150410_191557.jpg"
+tags: [Arduino, Prototype, C/C++]
+---
+<p class="lead">The <a href="http://aer201.aerospace.utoronto.ca/">AER201 engineering design course</a> of winter 2015 required the design and construction of an autonomous robot capable of playing a modified version of Connect-Four.</p>
+
+# Overview
+The team was divided into three seperate roles: Electromech, Circuits, and Microprocessor. The electromechical member would be responsible for the physical construction of the robot - building and attaching the chassis, motors, and actuators. The circuits member would be responsible for putting together circuit interfaces to connect the electronics to the microprocessor. Finally, the microprocessor member would be responsible for programming the microprocessor and ultimately controlling the robot.
+<table class="table table-hover table-condensed">
+    <thead>
+    <th>Role</th>
+    <th>Name</th>
+    <th>Tasks</th>
+    <th>Tools and Materials</th>
+</thead>
+    <tbody>
+    <tr>
+        <td>Electromech</td>
+        <td>Jessica Leung</td>
+        <td>Build chassis, attach components</td>
+        <td>
+            <ul>
+                <li>Drill, rotary tool</li>
+                <li>Bandsaw, handsaw</li>
+                <li>Screws, nails, and glue</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>Circuits</td>
+        <td>Wesley Heung</td>
+        <td>Build circuit interfaces, connect electronics</td>
+        <td>
+            <ul>
+                <li>Oscilloscope</li>
+                <li>Soldering iron</li>
+                <li>Printed circuit boards, resistors, wire</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>Microprocessor</td>
+        <td>Zhi Ye</td>
+        <td>Program microprocessor</td>
+        <td>
+            <ul>
+                <li>Computer</li>
+                <li>USB cable</li>
+            </ul>
+        </td>
+    </tr>
+</tbody>
+</table>
+
+# Design
+
+
+## Construction
+
+
+## Circuits
+
+
+## Programming
+As I had a strong interest in programming (particularly robots), I decided to assist with programming the robot. I began by experimenting with small submodules that we would eventually need. Several small progams that tested a specific functionality were developed. Many of these programs were considered "proof of concepts" to demonstrate that a specific functionality could be achieved.
+<table class="table table-hover table-condensed">
+    <thead>
+    <th>Name</th>
+    <th>Purpose</th>
+</thead>
+    <tbody>
+    <tr>
+        <td>Analog Reader</td>
+        <td>Reads analog inputs A0-A4 and prints them to the serial monitor. Useful for checking if the sensors and sensor circuits are reading properly. Eventually evolved into the Virtual Oscilloscope function of <a href="/projects/heartbeat.html#virtual_oscilloscope">Heartbeat</a>.</td>
+    </tr>
+    <tr>
+        <td>H-bridge Test</td>
+        <td>Turns the motors one way, then another one at a time to exhaustively test the functionality of the H-bridge and ensure it is working correctly.</td>
+    </tr>
+    <tr>
+        <td>Comsat (master/slave)</td>
+        <td>Sends radio-frequency communications from the master to the slave. Requires two Arduino microprocessors.</td>
+    </tr>
+    <tr>
+        <td>Encoder Test</td>
+        <td>Records the number of rising edges seen from an encoder attached to the hardware interrupt pins 2 and 3.</td>
+    </tr>
+    <tr>
+        <td>Line Follower</td>
+        <td>Follows a simple dark line on a light background.</td>
+    </tr>
+    <tr>
+        <td>Navigation Test</td>
+        <td>Based on the Line Follower, navigates a pre-programmed series of directions on a grid.</td>
+    </tr>
+</tbody>
+</table>
+
+### Heartbeat <small>(<a href="/projects/heartbeat.html">Main article</a>)</small>
+The serial communication program Heartbeat was developed in support of this project. It was initially intended to serve as a simple graphical debugger, but quickly transitioned to its final role as a complete IO bridge between the Arduino and a computer.
+
+# Features
+
+# Lessons Learned
+As a school project, this robot contained a plethora of lessons. However, the majority of these lessons tended not to be in the practical aspects such as the design and construction of the robot, but rather in conceptual aspects such as the planning and management of the project and team.
+
+## Reliability
+This entire project was a demonstration of why reliability must come before efficiency. When components fail to behave as expected, the entire robot cannot perform its task. Debugging takes hours, or even days. No matter how good the robot is, if it doesn't work, it won't finish its task.
+
+### Integration
+Even when each component works on its own, often putting them all together is the biggest challenge. Suddenly there is no room to fit the sensor board, because the motors mounts are in the way. Or perhaps the motor torque is too high and tears itself off the mount. Maybe the navigation algorithm works, but can't handle a slippery surface. Whatever it is, there is bound to be a multitude of problems as the various components of the project come together.
+
+## Documentation
+A core concept of this course was documenting _in writing_ all actions taken. To this end, each student was required to maintain a handwritten notebook. In engineering, your notebook is physical proof of due diligence - proof that the work was done. The contents of my notebook has been scanned here. In addition, electronic documents were maintained in a shared Dropbox.
+
+### Accountability
+Our group had a major issue where communication was inadequate. Therefore, the group timeline was neglected and tasks left unfinished (or even unstarted!). Because the timeline was uncoordinated, there was no way to schedule dependencies appropriately and important tasks were often left waiting. In order to complete a project on schedule, the team must agree on the timeline and constantly revise it so that the tasks will be finished.
+<div class="framed">
+    <img src="/res/timeline.png" alt="Timeline" />
+    <div class="caption">A sample from the timeline</div>
+</div>

@@ -6,7 +6,6 @@ active-menu-item: "design"
 permalink: "/design/"
 ---
 <div class="row">
-{% include under-construction.md %}
     {% for design in site.collections.design.docs %}
     <div class="col-xs-12 col-md-3">
         <div class="thumbnail">

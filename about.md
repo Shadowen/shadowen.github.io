@@ -16,16 +16,12 @@ I am excited to develop revolutionary next-generation technologies such as virtu
         </div>
         <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
             <div class="panel-body">
-                    <ul>
-                        <li>(2013 - 2017 projected) University of Toronto - BASc in <a href="http://engsci.utoronto.ca/">Engineering Science</a> (<a href="http://engsci.utoronto.ca/explore_our_program/majors/roboticsengineeringoption/">Robotics Option</a>)
-                            <ul>
-                            <li>Completed second year of the program covering a large variety of engineering disciplines including computer science, electrical circuits, calculus, linear algebra, civil engineering, kinematics, quantum physics, biology, thermodynamics, fluid mechanics, materials science, and engineering design</li>
-                        </ul></li>
-                        <li>(2015) Coursera - <a href="https://www.coursera.org/course/compilers">Compilers</a> (Alex Aiken, Stanford)
-                        	<ul><li>Built a compiler for the Cool programming language including a JLex-based lexical analyzer, LL(1) recursive-descent parser, semantic analyzer, type checker, optimizer, and code generator for the MIPS instruction set</li></ul></li>
-                        <li>(2009 - 2013) Markham District High School - Ontario Secondary School Diploma
-                            <ul><li>Gifted and Advanced Placement (Calculus, Biology) stream</li></ul></li>
-                    </ul>
+                    - (2013 - 2017 projected) University of Toronto - BASc in <a href="http://engsci.utoronto.ca/">Engineering Science</a> (<a href="http://engsci.utoronto.ca/explore_our_program/majors/roboticsengineeringoption/">Robotics Option</a>)
+                        - Completed second year of the program covering a large variety of engineering disciplines including computer science, electrical circuits, calculus, linear algebra, civil engineering, kinematics, quantum physics, biology, thermodynamics, fluid mechanics, materials science, and engineering design
+                    - (2015) Coursera - <a href="https://www.coursera.org/course/compilers">Compilers</a> (Alex Aiken, Stanford)
+                    	- Built a compiler for the Cool programming language including a JLex-based lexical analyzer, LL(1) recursive-descent parser, semantic analyzer, type checker, optimizer, and code generator for the MIPS instruction set
+                    - (2009 - 2013) Markham District High School - Ontario Secondary School Diploma
+                        - Gifted and Advanced Placement (Calculus, Biology) stream
             </div>
         </div>
     </div>

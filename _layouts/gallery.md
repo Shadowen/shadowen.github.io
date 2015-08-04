@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: skrollr-page
 ---
 <div class="row">
     <div class="col-md-offset-1 col-md-10">

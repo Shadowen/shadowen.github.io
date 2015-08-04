@@ -3,7 +3,7 @@
 
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>404 Error | Wesley Heung</title>
+        <title>Template | Wesley Heung</title>
         <!-- Favicon -->
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
@@ -20,10 +20,12 @@
                 $('[data-toggle="tooltip"]').tooltip();
             });
         </script>
+        <!-- Google Code Prettify -->
+        <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=desert"></script>
         <!-- Skrollr -->
         <script src="/js/skrollr.min.js"></script>
         <script>
-             $(function () {
+              $(function () {
                 skrollr.init({
                     smoothScrolling: false,
                     forceHeight: false
@@ -34,25 +36,32 @@
         <link rel="stylesheet" type="text/css" href="/css/styles.css">
         <!-- Header -->
         <script src="/js/header.js"></script>
-        <!-- Go back one page -->
-        <script>
-            function goBack() {
-                window.history.back(2);
-            }
-        </script>
     </head>
 
     <body>
-        <header>
-            <!-- Header content is loaded by JQuery -->
+        <header active="projects">
+            <!-- Header content loaded by JQuery -->
         </header>
         <div id="skrollr-body">
-            <div class="container-fluid full-size parallax-bg" style="background-image: url(/res/DSC_0773.jpg)" data-top="background-position: 0% 0%;" data-bottom="background-position: 0% 100%;">
+            <div class="container-fluid full-size">
                 <div class="row">
-                    <div class="col-md-offset-2 col-md-8">
-                        <div class="alert alert-danger alert-dismissible" role="alert">Oops! You 404'd. Try going
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><a class="alert-link" href="#" onclick="goBack();">back in time</a>.
+                    <div class="jumbotron" style="background-image: url(/res/DSC_0748.jpg)">
+                        <div class="caption">
+                            <h1>Title
+                                <a href="#" class="btn btn-primary repo-link">Go to Github</a>
+                                <br>
+                                <small>Description</small>
+                            </h1>
+                            <span class="label label-java">Java</span>
+                            <span class="label label-html">HTML</span>
                         </div>
+                    </div>
+                </div>
+                <div class="row parallax-bg" style="background-image: url(/res/DSC_0779.jpg);" data-top="background-position: 0% 0%;" data-bottom="background-position:0% 100%;">
+                    <div class="col-xs-12 col-md-offset-1 col-md-10 article-content">
+                        <p class="lead">Leading content</p>
+                        <h1>Title</h1>
+                        <p>Content</p>
                     </div>
                 </div>
             </div>

@@ -7,14 +7,20 @@ active-menu-item: "projects"
 ---
 <!-- Thumbnails -->
 {% assign projects = site.collections.projects.docs | sort: 'thumbnail-size' | reverse %}
-{% assign currentThumbsize = project.thumbnail-size %}
-<div class="row">
+{% comment %}The thumbnail size in Bootstrap columns of the current project{% endcomment %}
+{% assign lastThumbSize = projects.first.thumbnail-size %}
+{% comment %}The column on which this thumbnail beings{% endcomment %}
+{% assign startColumn = 1 %}
+<div class="row row-eq-height">
     {% for project in projects %}
-    {% if currentThumbsize != project.thumbnail-size %}
-    {% assign currentThumbsize = project.thumbnail-size %}
+
+    {% comment %}If the thumbnail size changes or the row is full, make another row{% endcomment %}
+    {% if lastThumbSize != project.thumbnail-size or startColumn >= 12 %}
+    {% assign startColumn = 1 %}
 </div>
-<div class="row">
+<div class="row row-eq-height">
     {% endif %}
+
         <div class="col-xs-12 col-md-{{ project.thumbnail-size }}">
             <div class="thumbnail">
                 <a href="{{ project.url }}">
@@ -27,5 +33,10 @@ active-menu-item: "projects"
                 {% endfor %}
             </div>
         </div>
+
+    {% comment %}Increment the column counter{% endcomment %}
+    {% assign startColumn = startColumn | plus: project.thumbnail-size %}
+    {% comment %}Remember the thumbnail size{% endcomment %}
+    {% assign lastThumbSize = project.thumbnail-size %}
     {% endfor %}
 </div>

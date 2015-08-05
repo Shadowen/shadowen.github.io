@@ -78,6 +78,16 @@
 }
 
 
+/* http://getbootstrap.com.vn/examples/equal-height-columns/ */
+
+.row-eq-height {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+
 /* Custom jumbotrons for article headers */
 
 .row > .jumbotron {
@@ -153,7 +163,9 @@
     background-color: #f46303;
 }
 
-.label-c, .label-c\+\+, .label-c\/c\+\+ {
+.label-c,
+.label-c\+\+,
+.label-c\/c\+\+ {
     background-color: #f00;
 }
 
@@ -161,7 +173,8 @@
     background-color: grey;
 }
 
-.label-svn, .label-vcs {
+.label-svn,
+.label-vcs {
     background-color: #808080;
 }
 
@@ -196,6 +209,7 @@
 .label-jekyll {
     background-color: green;
 }
+
 
 /* Fit the body to everything under the navbar */
 
@@ -294,10 +308,11 @@ body {
     overflow: no-content no-content;
 }
 
-
 pre {
     white-space: pre;
 }
+
+
 /* Selectable code */
 
 pre.selectable {

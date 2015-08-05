@@ -6,7 +6,6 @@ permalink: "/art/"
 active-menu-item: "art"
 ---
 <div class="row">
-{% include under-construction.md %}
     {% for album in site.collections.art.docs %}
     <div class="col-xs-12 col-md-4">
         <div class="thumbnail">

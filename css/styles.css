@@ -153,7 +153,7 @@
     background-color: #f46303;
 }
 
-.label-c {
+.label-c, .label-c\+\+, .label-c\/c\+\+ {
     background-color: #f00;
 }
 
@@ -161,7 +161,7 @@
     background-color: grey;
 }
 
-.label-vcs {
+.label-svn, .label-vcs {
     background-color: #808080;
 }
 
@@ -196,7 +196,6 @@
 .label-jekyll {
     background-color: green;
 }
-
 
 /* Fit the body to everything under the navbar */
 
@@ -296,6 +295,9 @@ body {
 }
 
 
+pre {
+    white-space: pre;
+}
 /* Selectable code */
 
 pre.selectable {

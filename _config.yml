@@ -10,8 +10,8 @@ url: "http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: jekyllrb
 github_username:  jekyll
 
-# Handling Reading
-safe: true
+# GitHub defaults
+highlighter: pygments
 
 # Build settings
 markdown: kramdown
@@ -51,3 +51,8 @@ defaults:
     values:
       layout: null
       active-menu-item: "design"
+
+# GitHub overrides
+safe: true
+lsi: false
+# source: your top-level directory

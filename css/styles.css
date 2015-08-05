@@ -128,21 +128,26 @@
 
 /* Gallery thumbnails*/
 
-.gallery .thumbnail {
+.gallery .item {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.8);
 }
 
-.gallery .thumbnail img {
+.gallery .item img {
     width: 100%;
 }
 
-.gallery .thumbnail .caption {
+.gallery .item .caption {
     font-size: 24px;
     text-align: center;
 }
 
-.gallery .thumbnail a:hover {
-    color: rgb(0, 0, 0);
+.gallery .item>.tags {
+    align-self: flex-end;
 }
 
 

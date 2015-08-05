@@ -21,16 +21,16 @@ active-menu-item: "projects"
 <div class="row row-eq-height">
     {% endif %}
 
-        <div class="col-xs-12 col-md-{{ project.thumbnail-size }}">
-            <div class="thumbnail">
-                <a href="{{ project.url }}">
-                    <img src="{{ project.thumbnail }}" alt="...">
-                    <div class="caption">{{project.title}}</div>
-                </a>
-                {% assign tags = project.tags | sort %}
-                {% for tag in tags %}
+        <div class="col-xs-12 col-md-{{ project.thumbnail-size }} item">
+            <a href="{{ project.url }}">
+                <img src="{{ project.thumbnail }}" alt="...">
+                <div class="caption">{{project.title}}</div>
+            </a>
+            <div class="tags">
+            {% assign tags = project.tags | sort %}
+            {% for tag in tags %}
                 <span class="label label-{{ tag | downcase}}">{{tag}}</span>
-                {% endfor %}
+            {% endfor %}
             </div>
         </div>
 
@@ -39,4 +39,6 @@ active-menu-item: "projects"
     {% comment %}Remember the thumbnail size{% endcomment %}
     {% assign lastThumbSize = project.thumbnail-size %}
     {% endfor %}
+
+    {% comment %}Fill the remaining spaces with empty boxes{% endcomment %}
 </div>

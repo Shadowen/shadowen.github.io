@@ -1,0 +1,12 @@
+---
+title: Home
+layout: default
+---
+<div class="front-page" style="background-image: url('/res/20150305_115302.jpg')">
+    <div class="overlay-darken"></div>
+    <div class="center-page text-nowrap">
+        <h1>Wesley Heung</h1>
+        <br>
+        <h2>Engineering Design</h2>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+---
+layout: skrollr-page
+---
+<div class="row">
+    <div class="jumbotron" style="background-image: url('{{ page.banner-image }}');">
+        <div class="caption">
+            <h1>
+                {{ page.title }}<br>
+                <small>{{ page.summary }}</small>
+            </h1>
+                {% for repo in page.repositories %}
+                    <a href="{{ repo }}" class="btn btn-primary repo-link">Go to GitHub</a>
+                {% endfor %}
+            {% for item in page.tags %}
+                <span class="label label-{{ item | downcase}}">{{item}}</span>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<div class="row parallax-bg" style="background-image: url('{{ page.article-background }}');" data-top="background-position: 0% 0%;" data-bottom="background-position:0% 100%;">
+    <div class="col-xs-12 col-md-offset-1 col-md-10 article-content">
+        {{ content }}
+    </div>
+</div>

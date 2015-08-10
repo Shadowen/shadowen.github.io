@@ -26,12 +26,12 @@ $(function() {
         <div class="collapse navbar-collapse" id="mynavbar">
             <!-- Menu items -->
             <ul class="nav navbar-nav">
-                <li {% if include.active=="about" %}class="active" {% endif %}><a href="/about">About</a></li>
-                <li {% if include.active=='projects' %}class="active" {% endif %}><a href="/projects">Projects</a></li>
-                <li {% if include.active=='art' %}class="active" {% endif %}><a href="/art">Art</a></li>
-                <li {% if include.active=='design' %}class="active" {% endif %}><a href="/design">Design</a></li>
+                <li {% if include.active == "about" %}class="active" {% endif %}><a href="/about">About</a></li>
+                <li {% if include.active == 'projects' %}class="active" {% endif %}><a href="/projects">Projects</a></li>
+                <li {% if include.active == 'art' %}class="active" {% endif %}><a href="/art">Art</a></li>
+                <li {% if include.active == 'design' %}class="active" {% endif %}><a href="/design">Design</a></li>
                 <li role="separator" class="divider"></li>
-                <li {% if include.active=='contact' %}class="active" {% endif %}><a href="/contact">Contact</a></li>
+                <li {% if include.active == 'contact' %}class="active" {% endif %}><a href="/contact">Contact</a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->

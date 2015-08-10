@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
-  {% include head.html %}
+{% include head.html %}
 
-  <body>
-      {% include header.html active=page.active-menu-item %}
-      {{ content }}
-  </body>
+<body>
+    {% include header.html active=page.active-menu-item %}
+    <div id="fadeInBody">
+        {{ content }}
+    </div>
+</body>
 
 </html>

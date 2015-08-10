@@ -1,6 +1,29 @@
 /* Import fonts */
 
 @import url("fontello.css");
+
+/* Fade pages in */
+
+body {
+    background-color: black;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0.5;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#fadeInBody {
+    animation: fadeIn 1s;
+}
+
+
+/* Front page */
+
 .overlay-darken {
     height: 100%;
     width: 100%;

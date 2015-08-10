@@ -1,0 +1,5 @@
+{% assign remaining = 12 | minus: include.startColumn | divided_by: include.lastThumbSize %}
+{% for i in (0..remaining) %}
+    <div class="col-xs-12 col-md-{{ include.lastThumbSize }} item hidden-xs invisible">
+    </div>
+{% endfor %}

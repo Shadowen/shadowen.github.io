@@ -88,7 +88,7 @@ $(function () {
 </table>
 <b>JQuery</b> is an essential library when using Javascript. It allows easy selection of DOM elements with CSS-like selectors, adds callbacks on important events, and generally makes working with HTML much easier. It is also a dependency for many other libraries because of its aforementioned utility.
 <b>Bootstrap</b> (aka Twitter Bootstrap) is a HTML, CSS, and Javascript framework that is primarily used for decorating mobile responsive websites. It comes with many built-in styles and graphical features, which makes it a perfect foundation to build the site's visuals on.
-<b>Google Code Prettify</b> is a small Javascript library used to enhance the display of source code in the website. It is primarily used for its syntax highlighting feature. For example, it is used here to highlight the following [Scheme](https://en.wikipedia.org/wiki/Scheme_(programming_language)) fragment:
+<b>Google Code Prettify</b> is a small Javascript library used to enhance the display of source code in the website. It is primarily used for its syntax highlighting feature. For example, it is used here to highlight the following <a href="https://en.wikipedia.org/wiki/Scheme_(programming_language">Scheme</a>) fragment:
 
 <div class="framed">
     <pre class="prettyprint lang-scheme">(define ^
@@ -108,8 +108,8 @@ $(function () {
     <p class="caption">A sample of Google Code Prettify on a small Scheme fragment.</p>
 </div>
 <b>Skrollr</b> is one of the most popular parallax scrolling libraries in use today. It handles the backgrounds other parallax animations throughout the site.
-<b>Galleria</b> is a 100% responsive free photo and video gallery library written in JavaScript. Basic usage requires no JavaScript knowledge, but of course custom themes can be applied to the interface. The theme used in the [Art](/art) pages was designed to fulfill the unique needs of this website.
-Using <b>Fontello</b>, I built myself a custom webfont with icons from [Browser Logo Icons](http://designpieces.com/2013/04/browser-logo-icons-flat-vector-eps-for-chrome-firefox-internet-explorer-and-more/), Fontelico, Font Awesome, Iconic, Elusive, and Entypo
+<b>Galleria</b> is a 100% responsive free photo and video gallery library written in JavaScript. Basic usage requires no JavaScript knowledge, but of course custom themes can be applied to the interface. The theme used in the <a href="/art">Art</a> pages was designed to fulfill the unique needs of this website.
+Using <b>Fontello</b>, I built myself a custom webfont with icons from <a href="http://designpieces.com/2013/04/browser-logo-icons-flat-vector-eps-for-chrome-firefox-internet-explorer-and-more/">Browser Logo Icons</a>, Fontelico, Font Awesome, Iconic, Elusive, and Entypo
 
 <div class="framed row" style="height:100%;">
     <div class="col-md-6">
@@ -168,18 +168,18 @@ Using <b>Fontello</b>, I built myself a custom webfont with icons from [Browser 
 </table>
 <p>The project began as a simple HTML page manually created in a folder on my desktop. However, it began to grow beyond my capabilities to organize as the number of pages increased. To manage the HTML and CSS files, I began using <b>Sublime Text 3</b>. The syntax highlighting offered by the base program was useful, but the real power came with the HTMLPrettify plugin that could auto-format the long files.</p>
 <p>Soon after, I realized that I would need a webserver of some sort to host the pages. This would allow me additional power over what was served in a few crucial places: default pages (<code>index.html</code>) and error pages (<code>404.html</code>) for this reason, I used Microsoft's <b>WebMatrix 3</b>.</p>
-<p>Pretty soon, the site was large enough that I had to worry about breaking it with accidental changes. At this point, it was important to use a version control system (VCS). Of course, <b>GitHub</b> would be a logical choice, since much of my source code was contained in the cloud there. I created the repository at [github.com/Shadowen/shadowen.github.io](https://github.com/Shadowen/shadowen.github.io). But GitHub also had an unexpected benefit of hosting static pages as well. Therefore, the website was also hosted at [shadowen.github.io](http://shadowen.github.io) with the help of GitHub Pages.</p>
-<p>Finally, the front end url was chosen to be a subdomain of my family domain. With a simple CNAME entry, the website was available at [wesley.heungs.com](http://wesley.heungs.com).</p>
+<p>Pretty soon, the site was large enough that I had to worry about breaking it with accidental changes. At this point, it was important to use a version control system (VCS). Of course, <b>GitHub</b> would be a logical choice, since much of my source code was contained in the cloud there. I created the repository at <a href="https://github.com/Shadowen/shadowen.github.io">github.com/Shadowen/shadowen.github.io</a>. But GitHub also had an unexpected benefit of hosting static pages as well. Therefore, the website was also hosted at <a href="http://shadowen.github.io">shadowen.github.io</a> with the help of GitHub Pages.</p>
+<p>Finally, the front end url was chosen to be a subdomain of my family domain. With a simple CNAME entry, the website was available at <a href="http://wesley.heungs.com">wesley.heungs.com</a>.</p>
 
 <h1>Obstacles</h1>
 <p>Any project has obstacles to its success. Here are some that I encountered and how I overcame them.</p>
 
 <h2>Mobile Parallax</h2>
 <p>Skrollr is easy enough to create parallax backgrounds with. To obtain the effect I wanted, I simply tagged the <code>div</code> element that the background is contained in with <code>data-top="background-position: 0% 0%;"</code> and <code>data-bottom="background-position:0% 100%;"</code> attributes.</p>
-However, making the website work for mobile is much more difficult. As mentioned by the [Skrollr README](https://github.com/Prinzhorn/skrollr#mobile-support), many mobile browsers tend to delay or disable JavaScript while scrolling. So to my surprise when the page was first loaded on a mobile device, it was simply impossible to scroll down the page since Skrollr itself was disabled!
+However, making the website work for mobile is much more difficult. As mentioned by the <a href="https://github.com/Prinzhorn/skrollr#mobile-support">Skrollr README</a>, many mobile browsers tend to delay or disable JavaScript while scrolling. So to my surprise when the page was first loaded on a mobile device, it was simply impossible to scroll down the page since Skrollr itself was disabled!
 <p>Fortunately, an easy solution is also documented. Skrollr is designed to make use of an element with the id <code>skrollr-body</code> to fake scrolling on mobile devices. Simply adding an extra <code>div</code> solved the problem.</p>
 
 <h2>Image compression</h2>
-<p>As I added images to the website, the repository size started to grow unbelievably quickly. It turns out that pushing megabytes of photos takes a long time. Instead, using [GIMP](http://www.gimp.org/), I simply scaled the pictures down to a reasonable resolution and decreased quality as necessary. As a result, the website loads much quicker, and my repository is much smaller.</p>
+<p>As I added images to the website, the repository size started to grow unbelievably quickly. It turns out that pushing megabytes of photos takes a long time. Instead, using <a href="http://www.gimp.org/">GIMP</a>, I simply scaled the pictures down to a reasonable resolution and decreased quality as necessary. As a result, the website loads much quicker, and my repository is much smaller.</p>
 
 <h2>Jekyll/GitHub Pages</h2>

@@ -13,10 +13,30 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <!-- Google Code Prettify -->
-        <script src="https://cdn.rawgit.com/google/code-prettify/master/src/prettify.js"></script>
-        <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/google/code-prettify/master/styles/desert.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/src/prettify.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/google/code-prettify/master/styles/desert.css">
+    <script>
+    $(prettyPrint);
+    </script>
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
-    <!-- Header -->
-    <script src="/js/header.js"></script>
+    <!-- Custom js -->
+    <script>
+    // Allows .selectable elements to be selected in a single click.
+    // http://keestalkstech.com/2014/04/click-to-select-all-on-the-pre-element/
+    $('.selectable').click(function() {
+        // if (this.select) {
+        //      this.select();
+        // } else if (document.selection) {
+        //      var range = document.body.createTextRange();
+        //      range.moveToElementText(this);
+        //      range.select();
+        // } else
+        if (window.getSelection) {
+            var range = document.createRange();
+            range.selectNodeContents(this);
+            window.getSelection().addRange(range);
+        }
+    });
+    </script>
 </head>

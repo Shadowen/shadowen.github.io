@@ -10,20 +10,22 @@ active-menu-item: "projects"
 {% comment %}The thumbnail size in Bootstrap columns of the current project{% endcomment %}
 {% assign lastThumbSize = projects.first.thumbnail-size %}
 {% comment %}The column on which this thumbnail beings{% endcomment %}
-{% assign startColumn = 1 %}
 <div class="row row-eq-height">
+    {% assign startColumn = 1 %}
     {% for project in projects %}
 
     {% comment %}If the thumbnail size changes or the row is full, make another row{% endcomment %}
     {% if lastThumbSize != project.thumbnail-size or startColumn >= 12 %}
-    {% assign startColumn = 1 %}
+    {% comment %}Fill the remaining spaces with empty boxes so Bootstrap will layout properly{% endcomment %}
+    {% include gallery-insertEmptyColumns.liquid startColumn=startColumn lastThumbSize=lastThumbSize %}
 </div>
 <div class="row row-eq-height">
+    {% assign startColumn = 1 %}
     {% endif %}
 
         <div class="col-xs-12 col-md-{{ project.thumbnail-size }} item">
-            <a href="{{ project.url }}">
-                <img src="{{ project.thumbnail }}" alt="...">
+            <a href="{{ project.url }}"
+>                <img src="{{ project.thumbnail }}">
                 <div class="caption">{{project.title}}</div>
             </a>
             <div class="tags">
@@ -38,7 +40,9 @@ active-menu-item: "projects"
     {% assign startColumn = startColumn | plus: project.thumbnail-size %}
     {% comment %}Remember the thumbnail size{% endcomment %}
     {% assign lastThumbSize = project.thumbnail-size %}
+
     {% endfor %}
 
-    {% comment %}Fill the remaining spaces with empty boxes{% endcomment %}
+    {% comment %}Fill the remaining spaces with empty boxes so Bootstrap will layout properly{% endcomment %}
+    {% include gallery-insertEmptyColumns.liquid startColumn=startColumn lastThumbSize=lastThumbSize %}
 </div>

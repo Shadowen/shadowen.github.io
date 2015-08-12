@@ -153,11 +153,24 @@ body {
 
 .gallery .item {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     margin: 10px;
     padding: 10px;
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.8);
+}
+
+.gallery .item a {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery .item a>div.img-wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .gallery .item img {
@@ -167,10 +180,6 @@ body {
 .gallery .item .caption {
     font-size: 24px;
     text-align: center;
-}
-
-.gallery .item>.tags {
-    align-self: flex-end;
 }
 
 
@@ -197,8 +206,28 @@ body {
     background-color: #f00;
 }
 
-.label-html {
+.label-html,
+.label-html5,
+.label-css,
+.label-css3 {
     background-color: grey;
+}
+
+.label-bootstrap {
+    background-color: #870274;
+}
+
+.label-jekyll,
+.label-liquid,.label-jekyll\/liquid {
+    background-color: green;
+}
+
+.label-javascript {
+    background-color: #000dff;
+}
+
+.label-jquery {
+    background-color: #0005ff;
 }
 
 .label-svn,
@@ -218,24 +247,8 @@ body {
     background-color: #006d8b;
 }
 
-.label-javascript {
-    background-color: #000dff;
-}
-
-.label-bootstrap {
-    background-color: #870274;
-}
-
-.label-jquery {
-    background-color: #0005ff;
-}
-
 .label-ai {
     background-color: #00b49e;
-}
-
-.label-jekyll {
-    background-color: green;
 }
 
 

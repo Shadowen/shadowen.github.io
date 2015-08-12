@@ -24,8 +24,10 @@ active-menu-item: "projects"
     {% endif %}
 
         <div class="col-xs-12 col-md-{{ project.thumbnail-size }} item">
-            <a href="{{ project.url }}"
->                <img src="{{ project.thumbnail }}">
+            <a href="{{ project.url }}">
+                <div class="img-wrapper">
+                    <img src="{{ project.thumbnail }}">
+                </div>
                 <div class="caption">{{project.title}}</div>
             </a>
             <div class="tags">

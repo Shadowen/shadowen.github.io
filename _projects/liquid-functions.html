@@ -1,0 +1,31 @@
+---
+title: liquid-functions
+summary: A collection of higher-level {% include %}-able Liquid functions for GitHub Pages
+repositories: ["https://github.com/Shadowen/liquid-functions/"]
+article-background: ""
+
+thumbnail: ""
+thumbnail-size: 3
+tags: [Jekyll, Liquid]
+---
+{% raw %}
+<p>When working with GitHub Pages/Jekyll for the first time, I was struck by the lack of some slightly more complex functions in Liquid. So I wrote some files that could easily be included into a larger website to provide additional functionality.</p>
+
+<p>The implementation of these functions take advantage of Liquid's <code>{% include %}</code> and <code>{% capture %}</code> tags to pass parameters and capture return values. Unfortunately, <code>{% capture %}</code> is only able to deal with strings, so lists must be returned as seperator-delimited lists.</p>
+
+<p>Because <code>{% capture %}</code> is used as the mechanism to return values, the functions must have all extraneous whitespace stripped away. Therefore, each script has two version: the source code and the "minified" version with all extra whitespace stripped.</p>
+
+<p>A more technical documentation may be found <a href="http://wesley.heungs.com/liquid-functions/">here</a>. What follows is simply an overview of available functions.</p>
+
+<h2>Overview</h2>
+<p><code>min.lqf</code> is a simple 2-argument minimum function.</p>
+
+<p><code>max.lqf</code> is a simple 2-argument maximum function.</p>
+
+<p><code>array-remove.lqf</code> is a file that takes an seperator-delimited list and removes the first element of the list. This simple function was missing from the available Liquid functions, so I had to write it in myself.</p>
+
+<p><code>most-occurences.lqf</code> uses <code>array-remove</code> to implement a function that finds the mode of a list. The mode is the element or elements that occur the most frequently inside the list. This function was inspired by <a href="http://stackoverflow.com/questions/31952917/liquid-how-do-i-count-matching-elements-in-an-array">this</a> StackOverflow question.</p>
+
+<h1>Next steps</h1>
+<p>Consider exploring <a href="https://github.com/reggi/shopify-liquid-functions">this</a> Liquid functions spec, though it does seem quite old. However, the method of returning values, while limited, does guarantee type safety - as much as Liquid guarantees type safety to begin with.</p>
+{% endraw %}

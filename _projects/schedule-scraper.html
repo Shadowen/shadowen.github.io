@@ -109,3 +109,6 @@ tags: [JavaScript, jQuery]
     <pre class="prettyprint lang-javascript">document.readyState == 'complete' ? run() : window.onload = run;</pre>
     <p class="caption"><code>run</code> immediately if page is loaded, otherwise wait for the page to load.</p>
 </div>
+
+<h2>Whitespace</h2>
+<p>When testing on my own schedule, it was easy to scrape the correct segments of HTML into JavaScript objects. However, during beta testing it was revealed that arbitrary whitespace/linebreaks could appear throughout the content for different people. This complicated the line-based scraping algorithm, which eventually had to be replaced with a tag-based one. Superfluous use of <code>.trim()</code> also helped mitigate the effects of additional whitespace.</p>

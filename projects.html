@@ -1,10 +1,16 @@
 ---
 layout: gallery
 title: Projects
-skrollr-background: "/res/IMG-20150512-WA0002.jpg"
+skrollr-background: "/res/2015-03-14 23.29.22.jpg"
 permalink: /projects/
 active-menu-item: "projects"
 ---
+{% include project-tags.html %}
+<!-- Tags bar -->
+<div class='row'>
+<div id='show-tags'></div>
+</div>
+
 <!-- Thumbnails -->
 {% assign projects = site.collections.projects.docs | sort: 'thumbnail-size' | reverse %}
 {% comment %}The thumbnail size in Bootstrap columns of the current project{% endcomment %}
@@ -23,7 +29,7 @@ active-menu-item: "projects"
     {% assign startColumn = 1 %}
     {% endif %}
 
-        <div class="col-xs-12 col-md-{{ project.thumbnail-size }} item">
+        <div id="{{ project.title }}" class="col-xs-12 col-md-{{ project.thumbnail-size }} item">
             <a href="{{ project.url }}">
                 <div class="img-wrapper">
                     <img src="{{ project.thumbnail }}">
@@ -33,7 +39,7 @@ active-menu-item: "projects"
             <div class="tags">
             {% assign tags = project.tags | sort %}
             {% for tag in tags %}
-                <span class="label label-{{ tag | downcase}}">{{tag}}</span>
+                <a><span class="label">{{ tag }}</span></a>
             {% endfor %}
             </div>
         </div>

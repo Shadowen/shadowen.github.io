@@ -1,0 +1,82 @@
+<link rel='stylesheet' href='/css/project-tags.css'>
+<script>
+var tags = new (function TagList(){
+    var uniqueValues = [];
+    var hashes = {};
+    this.add = function(names, options){
+        if (typeof names === 'string'){
+            names = [names];
+        }
+
+        for (var i = 0; i < names.length; i++){
+            if (typeof options.hash === 'undefined'){
+                options.hash = options.class;
+            }
+            this[names[i]] = options;
+        }
+        uniqueValues.push(names[0])
+        hashes['#' + options.hash] = options;
+        return this;
+    };
+    this.getByHash = function(hash){
+        if (hash.length === 0){
+            return hashes['#'];
+        }
+        return hashes[hash];
+    }
+
+    this.unique = function(){
+        return uniqueValues;
+    };
+});
+tags.add(['Show all'], {class: 'show-all', hash: ''})
+    .add('Bootstrap', {class: 'bootstrap', hash: 'bs'})
+    .add(['HTML', 'HTML 5'], {class: 'html'})
+    .add(['CSS', 'CSS 3'], {class: 'css'})
+    .add('JavaScript', {class: 'javascript', hash: 'js'})
+    .add('jQuery', {class: 'jquery', hash: 'jquery'})
+    .add(['GitHub Pages', 'Jekyll', 'Liquid'], {class: 'gh-pages'})
+    .add(['Java', 'Java 8'], {class: 'java'})
+    .add(['SQL', 'SQLite'], {class: 'sql'})
+    .add('SVN', {class: 'svn'})
+    .add('AI', {class: 'ai'})
+    .add(['C', 'C++', 'C/C++'], {class: 'c'})
+    .add('Arduino', {class: 'arduino'})
+    .add('Prototype', {class: 'prototype'})
+    .add(['Python', 'Python 3'], {class: 'python'});
+
+    $(function(){
+        $('.label').each(function(){
+            var l = $(this);
+            l.addClass(tags[l.text()].class);
+            l.parent().attr('href', '/projects/#' + tags[l.text()].hash)
+        });
+        var unique = tags.unique();
+        for (var i = 0; i < unique.length; i++){
+            var t = unique[i];
+            $('#show-tags').append(
+                $('<a>')
+                    .attr('href', '/projects/#' + tags[t].hash)
+                    .append(
+                        $('<span>')
+                            .addClass('label')
+                            .addClass(tags[t].class)
+                            .text(t)
+                        )
+                );
+        }
+
+        var filterByTag = function() {
+            var tag = tags.getByHash(window.location.hash);
+            if (tag.hash === '') {
+                $('.item').removeClass('tag-inactive');
+            }else{
+                var tagClass = '.' + tag.class;
+                $('.item:not(:has(' + tagClass + '))').addClass('tag-inactive');
+                $('.item:has(' + tagClass + ')').removeClass('tag-inactive');
+            }
+        };
+        window.onhashchange = filterByTag;
+        if (window.location.hash) filterByTag();
+    });
+</script>

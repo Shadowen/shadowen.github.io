@@ -117,6 +117,7 @@ body {
     margin-bottom: 0px;
     border-radius: 0px;
     padding: 50px;
+    min-height: 500px;
     background-size: cover;
     background-color: rgba(0, 0, 0, 0);
 }
@@ -158,15 +159,21 @@ body {
     padding: 10px;
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.8);
+    transition: opacity 1s, background-color 1s;
 }
 
-.gallery .item a {
+.gallery .item.tag-inactive {
+    opacity: 0.4;
+    background-color: rgba(200, 200, 200, 1);
+}
+
+.gallery .item > a {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
 }
 
-.gallery .item a>div.img-wrapper {
+.gallery .item > a > div.img-wrapper {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -191,64 +198,6 @@ body {
     font-size: 56px;
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 5px;
-}
-
-
-/* Create custom label colours */
-
-.label-java {
-    background-color: #f46303;
-}
-
-.label-c,
-.label-c\+\+,
-.label-c\/c\+\+ {
-    background-color: #f00;
-}
-
-.label-html,
-.label-html5,
-.label-css,
-.label-css3 {
-    background-color: grey;
-}
-
-.label-bootstrap {
-    background-color: #870274;
-}
-
-.label-jekyll,
-.label-liquid,.label-jekyll\/liquid {
-    background-color: green;
-}
-
-.label-javascript {
-    background-color: #000dff;
-}
-
-.label-jquery {
-    background-color: #0005ff;
-}
-
-.label-svn,
-.label-vcs {
-    background-color: #808080;
-}
-
-.label-robotics {
-    background-color: #ff0000;
-}
-
-.label-prototype {
-    background-color: #00ff21;
-}
-
-.label-arduino {
-    background-color: #006d8b;
-}
-
-.label-ai {
-    background-color: #00b49e;
 }
 
 

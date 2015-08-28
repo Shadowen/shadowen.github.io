@@ -1,6 +1,19 @@
 ---
 layout: skrollr-page
 ---
+{% if page.direct-link %}
+<!-- A redirect page -->
+<div class="row">
+    <div class="col-xs-12 col-md-offset-1 col-md-10 article-content">
+        Redirecting you to <a href="{{ page.direct-link }}">{{ page.direct-link }}</a>...
+    </div>
+</div>
+<script>
+    window.location.href = '{{ page.direct-link }}';
+</script>
+{% else %}
+<!-- A project page -->
+{% include project-tags.html %}
 <div class="row">
     <div class="jumbotron" style="background-image: url('{{ page.banner-image }}');">
         <div class="caption">
@@ -12,7 +25,7 @@ layout: skrollr-page
                     <a href="{{ repo }}" class="btn btn-primary repo-link">Go to GitHub</a>
                 {% endfor %}
             {% for item in page.tags %}
-                <span class="label label-{{ item | downcase}}">{{item}}</span>
+                <a href="{{ site.baseurl }}/projects#{{ item }}"><span class="label label-{{ item | downcase}}">{{ item }}</span></a>
             {% endfor %}
         </div>
     </div>
@@ -22,3 +35,4 @@ layout: skrollr-page
         {{ content }}
     </div>
 </div>
+{% endif %}

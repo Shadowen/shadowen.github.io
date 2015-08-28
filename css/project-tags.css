@@ -1,0 +1,67 @@
+/* Create custom label colours */
+
+.label.show-all {
+    background-color: white;
+}
+
+.label.show-all {
+    color: #337ab7;
+}
+
+.label.java {
+    background-color: #f46303;
+}
+
+.label.c {
+    background-color: #f00;
+}
+
+.label.python {
+    background-color: #c3e004;
+}
+
+.label.sql {
+    background-color: blue;
+}
+
+.label.html,
+.label.css {
+    background-color: grey;
+}
+
+.label.bootstrap {
+    background-color: #870274;
+}
+
+.label.gh-pages {
+    background-color: green;
+}
+
+.label.javascript {
+    background-color: #000dff;
+}
+
+.label.jquery {
+    background-color: #0005ff;
+}
+
+.label.svn,
+.label.vcs {
+    background-color: #808080;
+}
+
+.label.robotics {
+    background-color: #ff0000;
+}
+
+.label.prototype {
+    background-color: #00ff21;
+}
+
+.label.arduino {
+    background-color: #006d8b;
+}
+
+.label.ai {
+    background-color: #00b49e;
+}

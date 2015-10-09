@@ -119,6 +119,7 @@ body {
     padding: 50px;
     min-height: 500px;
     background-size: cover;
+    background-position: 50% 25%;
     background-color: rgba(0, 0, 0, 0);
 }
 

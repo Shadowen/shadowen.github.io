@@ -21,6 +21,9 @@ layout: skrollr-page
                 {{ page.title }}<br>
                 <small>{{ page.summary }}</small>
             </h1>
+                {% if page.repository %}
+                    <a href="{{ page.repository }}" class="btn btn-primary repo-link">Go to GitHub</a>
+                {% endif %}
                 {% for repo in page.repositories %}
                     <a href="{{ repo }}" class="btn btn-primary repo-link">Go to GitHub</a>
                 {% endfor %}
